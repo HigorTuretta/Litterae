@@ -61,6 +61,18 @@ class modelPortifolio
         
     }
 
+    function listaHabilitados($conDb) {
+        
+        $modelRsc = $conDb->db_select( "SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem desc" );
+        
+        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+            return array();
+        } else {
+            return $conDb->db_busca_dados_all($modelRsc);
+        }
+        
+    }
+
     /*
      * Retorna descrição do status
      */
@@ -101,7 +113,7 @@ class modelPortifolio
     {
     
         $rs = $conDb->db_update( "UPDATE blog
-                                  SET CodCategoria = ? , Titulo = ?, SubTitulo = ?, Descricao = ?, ImgCapa = ? , Img1 = ?
+                                  SET CodCategoria = ? , Titulo = ?, SubTitulo = ?, Descricao = ?, ImgCapa = ?, Img1 = ?
                                   WHERE codPublicacao = ? ",
                                 $data );
         

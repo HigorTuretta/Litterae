@@ -540,3 +540,26 @@ form input, select, textarea {
    margin-bottom: 100px;
 }
 /* PORTIFOLIO PAGE END */
+
+/* PORTIFOLIO FORM BEGIN */
+
+
+
+.form-files{
+    border: solid #000000 1px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: 100%; 
+    height: 300px; 
+}
+.form-files label{
+    margin-left: 20px;
+}
+
+.form-files img{
+    max-width: 150px;
+    max-height: 200px;  
+    margin-left: 150px;
+}
+/* PORTIFOLIO FORM END */

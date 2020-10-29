@@ -57,11 +57,13 @@ $dados = $model->lista($conDb);
         <div class="col-1">
             
             <a href="<?= SITE_URL . "formPortifolio/novo/0" ?>" title="Novo">
-            <i class="far fa-plus-square"></i>
+            <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
             </a>
 
         </div>
-
+        <div class="col-1 mt-3 mb-3">
+            <a href="<?= SITE_URL ?>areaAdministrativa" class="btn btn-danger" >Voltar</a>
+        </div>
     </div>
    
     <div class="row">
@@ -71,8 +73,7 @@ $dados = $model->lista($conDb);
             <table border="1" class="table table-hover table-condensed" name="tbListaUsuario" id="tbListaUsuario">
                 <thead class="thead-light">
                     <tr>
-                        <th style="width: 13%;">Status</th>
-                        <th style="width: 8%;">Código</th>
+                        <th style="width: 13%;">Status</th>                        
                         <th>Título</th>
                         <th>Sub-Título</th>
                         <th style="width: 20%;">Data da postagem</th>
@@ -91,7 +92,6 @@ $dados = $model->lista($conDb);
                     
                             <tr>
                                 <td align="center"><?= $model->mostraStatus( $value->StatusPostagem ) ?></td>
-                                <td align="center"><?= $value->codPublicacao ?></td>
                                 <td><?= $value->Titulo ?></td>
                                 <td><?= $value->SubTitulo ?></td>
                                 <td><?= $value->dataPostagem?></td>                              

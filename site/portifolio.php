@@ -3,7 +3,7 @@
 require_once "modelPortifolio.php";
 
 $model = new modelPortifolio();
-$dados = $model->lista($conDb);
+$dados = $model->listaHabilitados($conDb);
 
 ?>
 

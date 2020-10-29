@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.01" ?>">
+    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.06" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/css/bootstrap.min.css" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/js/package/dist/sweetalert2.min.css" ?>">
 

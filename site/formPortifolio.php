@@ -34,24 +34,24 @@ $descricao = Formulario::set_value("Descricao");
 
         <div class="form-row">
             <div class="form-group col-md-1">
-                <label for="codPublicacao">Código</label>
-                <input type="number" disabled class="form-control" name="codPublicacao" id="codPublicacao" 
+                <label for="CodPublicacao">Código</label>
+                <input type="number"  readonly="readonly"  class="form-control" name="CodPublicacao" id="CodPublicacao" 
                            value="<?= Formulario::set_value( "codPublicacao", 0 ) ?>">
             </div>
             <div class="form-group col-md-5">
                 <label for="titulo">Título</label>
-                <input type="text" class="form-control" name="titulo" id="titulo" value="<?= Formulario::set_value( "Titulo", "" ) ?>">
+                <input type="text" required class="form-control" name="titulo" id="titulo" value="<?= Formulario::set_value( "Titulo", "" ) ?>">
             </div>
             <div class="form-group col-md-6">
                 <label for="subTitulo">Sub-Título</label>
-                <input type="text" class="form-control" name="subTitulo" id="subTitulo"
+                <input required type="text" class="form-control" name="subTitulo" id="subTitulo"
                 value="<?= Formulario::set_value( "SubTitulo", "" ) ?>">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="categoria">Categoria</label>
-                <select class="form-control" name="categoria" id="categoria">
+                <select required class="form-control" name="categoria" id="categoria">
                     <option value="" disabled selected>Selecione...</option>
                     <?php
 
@@ -69,7 +69,7 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-group col-md-2">
                 <label for="StatusPostagem">Status da Postagem</label>
-                <select name="StatusPostagem" id="StatusPostagem" class="form-control">
+                <select required  name="StatusPostagem" id="StatusPostagem" class="form-control">
                     <option  disabled value="" <?= ( Formulario::set_value( "StatusPostagem") == ""  ? 'selected="selected"' : "" ) ?>>Selecione...</option>
                     <option <?= ( Formulario::set_value( "StatusPostagem") == "H"  ? 'selected="selected"' : "" ) ?> value="H">Habilitada</option>
                     <option <?= ( Formulario::set_value( "StatusPostagem") == "D"  ? 'selected="selected"' : "" ) ?> value="D">Desabilitada</option>
@@ -84,34 +84,51 @@ $descricao = Formulario::set_value("Descricao");
                 </textarea>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="img01">Imagem da Capa: </label>
-                <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img01" id="img01">
+        <div class="form-row form-files">
+            <div class="form-group col-md-6 ">
+                <label for="imgCapa">Imagem da Capa: </label>
+                <input  accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="imgCapa" id="imgCapa">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="hidden" name="ExcluirCapa" value="<?= trim(Formulario::set_value("ImgCapa", ""))?>">
+                <img  class="form-images" name=""  src="<?= SITE_URL ."assets/images/blog/". Formulario::set_value("ImgCapa", "")?>" alt="" srcset="">
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="img02">Imagem 01: </label>
+        <div class="form-row form-files">
+            <div class="form-group col-md-6">
+                <label for="img01">Imagem 01: </label>
+                <input  accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img01" id="img01">
+            </div>
+            <div class="form-group col-md-6">
+            <input type="hidden" name="ExcluirImg1" value="<?= trim(Formulario::set_value("Img1", ""))?>">
+                <img  class="form-images"  src="<?= SITE_URL ."assets/images/blog/". trim(Formulario::set_value("Img1", ""))?>" alt="" srcset="">
+            </div>
+        </div>
+        <div class="form-row form-files">
+            <div class="form-group col-md-6">
+                <label for="img02">Imagem 02: </label>
                 <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img02" id="img02">
             </div>
+            <div class="form-group col-md-6">
+                <img  class="form-images"  src="<?= SITE_URL ."assets/images/blog/". trim(Formulario::set_value("Img2", ""))?>" alt="" srcset="">
+            </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="img03">Imagem 02: </label>
+        <div class="form-row form-files">
+            <div class="form-group col-md-6">
+                <label for="img03">Imagem 03: </label>
                 <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img03" id="img03">
             </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="img04">Imagem 03: </label>
-                <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img04" id="img04">
+            <div class="form-group col-md-6">
+                <img  class="form-images"  src="<?= SITE_URL ."assets/images/blog/". trim(Formulario::set_value("Img3", ""))?>" alt="" srcset="">
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="img05">Imagem 04: </label>
-                <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img05" id="img04">
+        <div class="form-row form-files">
+            <div class="form-group col-md-6">
+                <label for="img03">Imagem 04: </label>
+                <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img03" id="img03">
+            </div>
+            <div class="form-group col-md-6">
+                <img  class="form-images"  src="<?= SITE_URL ."assets/images/blog/". trim(Formulario::set_value("Img4", ""))?>" alt="" srcset="">
             </div>
         </div>
 
