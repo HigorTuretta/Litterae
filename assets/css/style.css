@@ -20,15 +20,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-body {
-    background-color: #f1f1f1;
-    
-}
-
-
+d
 html, #wrapper {
     scroll-behavior: smooth;
+}
+
+.Padrao{
+    padding-top: 140px;
+    padding-bottom: 196px;
+    background-color: #f1f1f1;
 }
 
 /* HOME PAGE BEGIN */
@@ -74,7 +74,7 @@ html, #wrapper {
 /* NAVBAR */
 
 .navbar-personalized {
-    
+    position: fixed;
     top: 0;
     z-index: 2;
     display: flex;
@@ -529,21 +529,14 @@ form input, select, textarea {
 
 /* PORTIFOLIO PAGE BEGIN */
 
-.pTitle{
-    margin-top: 140px;
-}
 .pTitle h2{
     font-family: 'beyond_the_mountains';
     font-size: 45px;
 }
-.portifolio-cards{
-   margin-bottom: 100px;
-}
+
 /* PORTIFOLIO PAGE END */
 
 /* PORTIFOLIO FORM BEGIN */
-
-
 
 .form-files{
     border: solid #000000 1px;
@@ -563,3 +556,33 @@ form input, select, textarea {
     margin-left: 150px;
 }
 /* PORTIFOLIO FORM END */
+
+/* SAIBA MAIS BEGIN */
+.read-more-images{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.read-more-images img{
+    margin: 5px;
+    width: 450px;
+    height: 450px;
+}
+
+@media screen and (max-width: 970px){
+    .read-more-images img{
+        width: 350px;
+        height: 350px;
+    }
+}
+@media screen and (max-width: 735px){
+    .read-more-images img{
+        width: 450px;
+        height: 450px;
+    }
+    .read-more-images{
+        flex-direction: column;
+    }
+
+}
+/* SAIBA MAIS END */

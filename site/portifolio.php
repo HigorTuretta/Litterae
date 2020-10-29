@@ -6,8 +6,8 @@ $model = new modelPortifolio();
 $dados = $model->listaHabilitados($conDb);
 
 ?>
+<section class="Padrao">
 
-<div>
     <div class="pTitle">
         <h2 class="text-center">Portifólio Completo</h2>
     </div>
@@ -34,7 +34,7 @@ $dados = $model->listaHabilitados($conDb);
                                 <p><?= $value->SubTitulo ?></p>
 
                                 <div class="more">
-                                    <a href="#" class="read-more"> Saiba <span>Mais</span></a>
+                                    <a href="<?= SITE_URL . "saibaMais/visualizar/" . $value->codPublicacao ?>" class="read-more"> Saiba <span>Mais</span></a>
                                 </div>
                             </div>
                         </div>
@@ -55,4 +55,5 @@ $dados = $model->listaHabilitados($conDb);
                         </div>
         </div>
     </section>
-</div>
+
+</section>

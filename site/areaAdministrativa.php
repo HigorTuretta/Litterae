@@ -1,5 +1,5 @@
-<section class="adm-area pTitle">
-    <div class="mb-5 container">
+<section class="adm-area pTitle Padrao">
+    <div class="pb-5 container">
         <div class="col-md-12 mb-3">
             <a href="<?= SITE_URL ?>listaPortifolio" class="btn btn-primary w-100">Editar Portifólio</a>
         </div>

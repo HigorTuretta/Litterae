@@ -15,7 +15,7 @@ if ($acao == "Insert") {
         $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
 
         //tamanho máximo (em bytes)
-        $tamanhoPermitido = 1024 * 500; //500kb
+        $tamanhoPermitido = 1024*1024*100; //5mb
 
         //nome original do arquivo no computador do usuario
         $ImgCapa = $_FILES['imgCapa']['name'];
@@ -62,7 +62,7 @@ if ($acao == "Insert") {
 
         $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
 
-        $tamanhoPermitido = 1024 * 500; //500kb
+        $tamanhoPermitido = 1024*1024*100; //5mb
 
         $Img1 = $_FILES['img01']['name'];
 
@@ -140,6 +140,7 @@ if ($acao == "Insert") {
     $uploadCapa = true;
     $uploadImg1 = true;
 
+    //procedimendo para a imagem de Capa
     if (trim($arUser['ImgCapa']) != $_FILES['imgCapa']['name'] and $_FILES['imgCapa']['name'] != "") {
 
         //pasta para onde o arquivo será movido no webSite
@@ -149,7 +150,7 @@ if ($acao == "Insert") {
         $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
 
         //tamanho máximo (em bytes)
-        $tamanhoPermitido = 1024 * 500; //500kb
+        $tamanhoPermitido = 1024*1024*100; //5mb
 
         //nome original do arquivo no computador do usuario
         $ImgCapa = $_FILES['imgCapa']['name'];
@@ -187,7 +188,7 @@ if ($acao == "Insert") {
         }
     }
 
-
+    //procedimendo para a imagem 01   
     if (trim($arUser['Img1']) != $_FILES['img01']['name']  and $_FILES['img01']['name'] != "") {
 
 
@@ -196,7 +197,7 @@ if ($acao == "Insert") {
 
         $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
 
-        $tamanhoPermitido = 1024 * 500; //500kb
+        $tamanhoPermitido = 1024*1024*100; //5mb
 
         $Img1 = $_FILES['img01']['name'];
 
