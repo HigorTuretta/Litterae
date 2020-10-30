@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.11" ?>">
+    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.12" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/css/bootstrap.min.css" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/js/package/dist/sweetalert2.min.css" ?>">
 
@@ -32,7 +32,7 @@
                         <a href="<?= SITE_URL ?>portifolio">Portifólio</a>
                     </li>
                     <li>
-                        <a href="<?= SITE_URL ?>#">Orçamento</a>
+                        <a href="<?= SITE_URL ?>contato">Orçamento</a>
                     </li>
                 </ul>
 

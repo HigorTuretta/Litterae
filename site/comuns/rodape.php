@@ -16,16 +16,13 @@
                         <div class="col">
                             <span>Contatos:</span><br>
                             <span><i class="fas fa-envelope"></i> contato@litterae.com</span><br>
-                            <span><i class="fab fa-whatsapp"></i> (32) 99938 5459</span>
+                            <span><a style="color: white; text-decoration: none;" href="https://api.whatsapp.com/send?phone=5532999385459"><i class="fab fa-whatsapp"></i> (32) 99938 5459</a></span>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- FOOTER END -->
         </footer>
-        <!-- WPP LINK  -->
-        <a class="whatsapp" href="https://api.whatsapp.com/send?phone=5532999385459" target="blank"><i class="fab fa-whatsapp"></i></a>
-        <!-- WPP LINK -->
 
 
         <!-- scripts -->

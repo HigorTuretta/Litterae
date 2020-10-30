@@ -39,5 +39,7 @@ $descricao = Formulario::set_value("Descricao");
             <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img4", "") ?>" alt="Imagem 04">
         </div>
     </div>
-
+    <!-- WPP LINK  -->
+    <a class="whatsapp" href="https://api.whatsapp.com/send?phone=5532999385459" target="blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- WPP LINK -->
 </section>

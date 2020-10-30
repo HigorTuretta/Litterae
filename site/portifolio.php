@@ -55,5 +55,7 @@ $dados = $model->listaHabilitados($conDb);
                         </div>
         </div>
     </section>
-
+    <!-- WPP LINK  -->
+    <a class="whatsapp" href="https://api.whatsapp.com/send?phone=5532999385459" target="blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- WPP LINK -->
 </section>

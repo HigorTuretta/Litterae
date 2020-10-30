@@ -18,6 +18,26 @@ class modelPortifolio
         }
     }
 
+    function buscaRecentes($conDb){
+        $modelRsc = $conDb->db_select("SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem DESC LIMIT 6");
+
+        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+            return array();
+        } else {
+            return $conDb->db_busca_dados_all($modelRsc);
+        }
+    }
+
+    function buscaRecentesSlides($conDb){
+        $modelRsc = $conDb->db_select("SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem DESC LIMIT 3");
+
+        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+            return array();
+        } else {
+            return $conDb->db_busca_dados_all($modelRsc);
+        }
+    }
+
     function buscaCategoriaPorCod($conDb, $codPostagem){
         $modelRsc = $conDb->db_select("SELECT * FROM categoria WHERE codPublicacao = ?", 
         array($codPostagem));

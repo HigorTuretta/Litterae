@@ -20,11 +20,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-d
-html, #wrapper {
-    scroll-behavior: smooth;
+
+h4{
+    font-family: 'Bebas Neue', cursive ;
+    letter-spacing: 1.5px;
 }
 
+html, #wrapper, body {
+    scroll-behavior: smooth;
+}
 .Padrao{
     padding-top: 140px;
     padding-bottom: 196px;
@@ -413,7 +417,15 @@ button{
 /* FIM BTN ENVIAR */
 
 /* CONTATO BEGIN */
+.contato-links a{
+    font-size: 40px;
+    color:#849bff;
+    transition: all 0.3s;
+}
 
+.contato-links a:hover{
+    color: #5670e6;
+}
 form label {
     font-family: 'Bebas Neue', cursive;
     font-size: 18px;
@@ -435,8 +447,7 @@ form input, select, textarea {
 
 /* RODAPE */
 
-.rodape {
-    position: absolute;
+.rodape {  
     background-color: #849bff;
     width: 100%;
     height: 100px;
