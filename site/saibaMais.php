@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib\Formulario.php';
+require_once 'lib/Formulario.php';
 require_once $pasta . '/modelPortifolio.php';
 
 $model = new modelPortifolio();

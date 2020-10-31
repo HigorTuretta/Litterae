@@ -21,22 +21,22 @@
     box-sizing: border-box;
 }
 
-h4{
-    font-family: 'Bebas Neue', cursive ;
+h4 {
+    font-family: 'Bebas Neue', cursive;
     letter-spacing: 1.5px;
 }
 
 html, #wrapper, body {
     scroll-behavior: smooth;
 }
-.Padrao{
-    padding-top: 140px;
+
+.Padrao {
+    padding-top: 120px;
     padding-bottom: 196px;
     background-color: #f1f1f1;
 }
 
 /* HOME PAGE BEGIN */
-
 
 /* BOTÃO PERSONALIZADO */
 
@@ -77,8 +77,17 @@ html, #wrapper, body {
 
 /* NAVBAR */
 
-.navbar-personalized {
+nav {
+    transition: all 0.3s;
+}
+
+.header_area {
+    transition: background 0.4s, all 0.3s linear
+}
+
+.navbar-personalized-fixed {
     position: fixed;
+    background-color: #849bff;
     top: 0;
     z-index: 2;
     display: flex;
@@ -86,7 +95,6 @@ html, #wrapper, body {
     align-items: center;
     width: 100%;
     height: 90px;
-    background-color: #849bff;
 }
 
 .litterae {
@@ -125,7 +133,6 @@ html, #wrapper, body {
 .nav-links a:hover {
     color: #e119ff;
 }
-
 
 /* burger begin */
 
@@ -203,24 +210,26 @@ html, #wrapper, body {
 /* FIM NAVBAR */
 
 /* SLIDES BEGIN */
+.carousel-indicators li {
+    border-radius: 50%!important;
+    width: 12px!important;
+    height: 12px!important;
 
-.carrousel {
-    margin-bottom: 60px;
-    margin-top: 90px;
+}
+.carroca {
+    margin-top: -30px; 
+    margin-bottom: 50px;      
+}
+.carroca img {   
+     
+    width: 1600px;
+    height: 720px;   
 }
 
-.slides-images-1 {
-    background-image: url('../images/arte-lettering-na-parede-arte.jpg');
-}
-
-.slides-images-2 {
-    background-image: url('../images/parede-lousa-cozinha.jpg');
-}
-
-.carousel-item div {
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
+@media screen and (max-width:875px) {
+    .carroca img {
+        height: 400px;
+    }
 }
 
 /* SLIDES END */
@@ -387,7 +396,8 @@ html, #wrapper, body {
 /* FIM BTN PORTIFOLIO */
 
 /* BTN ENVIAR */
-button{
+
+button {
     border: none;
 }
 
@@ -417,15 +427,17 @@ button{
 /* FIM BTN ENVIAR */
 
 /* CONTATO BEGIN */
-.contato-links a{
+
+.contato-links a {
     font-size: 40px;
-    color:#849bff;
+    color: #849bff;
     transition: all 0.3s;
 }
 
-.contato-links a:hover{
+.contato-links a:hover {
     color: #5670e6;
 }
+
 form label {
     font-family: 'Bebas Neue', cursive;
     font-size: 18px;
@@ -447,7 +459,7 @@ form input, select, textarea {
 
 /* RODAPE */
 
-.rodape {  
+.rodape {
     background-color: #849bff;
     width: 100%;
     height: 100px;
@@ -535,12 +547,11 @@ form input, select, textarea {
 
 /* WPP LINK BUTTON END */
 
-
 /* HOME PAGE END */
 
 /* PORTIFOLIO PAGE BEGIN */
 
-.pTitle h2{
+.pTitle h2 {
     font-family: 'beyond_the_mountains';
     font-size: 45px;
 }
@@ -549,51 +560,58 @@ form input, select, textarea {
 
 /* PORTIFOLIO FORM BEGIN */
 
-.form-files{
+.form-files {
     border: solid #000000 1px;
     display: flex;
     align-items: center;
     margin: 20px;
-    width: 100%; 
-    height: 300px; 
-}
-.form-files label{
-    margin-left: 20px;
+    width: 100%;
+    height: 300px;
 }
 
-.form-files img{
+.form-files label {
+    margin-left: 20px;
+}
+.form-files input{
+    margin-left: 20px;
+}
+.form-files img {
     max-width: 150px;
-    max-height: 200px;  
+    max-height: 200px;
     margin-left: 150px;
 }
+
 /* PORTIFOLIO FORM END */
 
 /* SAIBA MAIS BEGIN */
-.read-more-images{
+
+.read-more-images {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.read-more-images img{
+
+.read-more-images img {
     margin: 5px;
     width: 450px;
     height: 450px;
 }
 
-@media screen and (max-width: 970px){
-    .read-more-images img{
+@media screen and (max-width: 970px) {
+    .read-more-images img {
         width: 350px;
         height: 350px;
     }
 }
-@media screen and (max-width: 735px){
-    .read-more-images img{
+
+@media screen and (max-width: 735px) {
+    .read-more-images img {
         width: 450px;
         height: 450px;
     }
-    .read-more-images{
+    .read-more-images {
         flex-direction: column;
     }
-
 }
+
 /* SAIBA MAIS END */

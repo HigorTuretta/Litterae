@@ -1,7 +1,7 @@
 <?php
 
 
-require_once 'lib\Formulario.php';
+require_once 'lib/Formulario.php';
 require_once $pasta . '/modelPortifolio.php';
 
 $model = new modelPortifolio();
@@ -12,7 +12,7 @@ $descricao = Formulario::set_value("Descricao");
 
 ?>
 <section class="Padrao">
-    <section class="pTitle mb-5 container">
+    <div class="pTitle mb-5 container">
 
         <div class="row mb-3">
 
@@ -82,8 +82,8 @@ $descricao = Formulario::set_value("Descricao");
                 </div>
             </div>
             <div class="form-row form-files">
-                <div class="form-group col-md-6 ">
-                    <label for="imgCapa">Imagem da Capa: </label>
+                <div class="form-group col-md-6">
+                    <label for="imgCapa">Imagem da Capa (480x360): </label>
                     <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="imgCapa" id="imgCapa">
                 </div>
                 <div class="form-group col-md-6">
@@ -93,7 +93,7 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img01">Imagem 01: </label>
+                    <label for="img01">Imagem 01 (450x450): </label>
                     <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img01" id="img01">
                 </div>
                 <div class="form-group col-md-6">
@@ -103,7 +103,7 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img02">Imagem 02: </label>
+                    <label for="img02">Imagem 02 (450x450): </label>
                     <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img02" id="img02">
                 </div>
                 <div class="form-group col-md-6">
@@ -112,7 +112,7 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img03">Imagem 03: </label>
+                    <label for="img03">Imagem 03 (450x450): </label>
                     <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img03" id="img03">
                 </div>
                 <div class="form-group col-md-6">
@@ -121,7 +121,7 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img03">Imagem 04: </label>
+                    <label for="img03">Imagem 04 (450x450): </label>
                     <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img03" id="img03">
                 </div>
                 <div class="form-group col-md-6">
@@ -143,5 +143,5 @@ $descricao = Formulario::set_value("Descricao");
                 CKEDITOR.replace('informacoes')
             }
         </script>
-    </section>
+    </div>
 </section>

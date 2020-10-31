@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.12" ?>">
+    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.22" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/css/bootstrap.min.css" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/js/package/dist/sweetalert2.min.css" ?>">
 
@@ -16,8 +16,8 @@
 <body>
     <!-- NAVBAR -->
     <div id="wrapper">
-        <header>
-            <div class="navbar-personalized" id="navbar">
+        <header class="header_area">
+            <nav class="navbar-personalized-fixed" id="navbar">
                 <div class="logo">
                     <a href="<?= SITE_URL ?>home">
                         <p class="litterae">Litterae</p>
@@ -41,7 +41,7 @@
                     <div class="line2"></div>
                     <div class="line3"></div>
                 </div>
-            </div>
+            </nav>
         </header>
         <main>
             <!-- END -->

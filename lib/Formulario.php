@@ -1,9 +1,5 @@
 <?php
-/**
- * Description of Formulario
- *
- * @author Aldecir Fonseca
- */
+
 
 class Formulario 
 {
