@@ -1,13 +1,14 @@
 <?php
 
 require_once "modelPortifolio.php";
+require_once "modelSlides.php";
 
 $model = new modelPortifolio();
+$modelSlide = new modelSlides();
 $dados = $model->buscaRecentes($conDb);
-$slider = $model->buscaRecentesSlides($conDb);
+$slider = $modelSlide->buscaSlidesHabilitados($conDb);
 
 ?>
-
 <!-- SLIDE BEGIN -->
 <section class="Padrao ">
     <div class="carroca ">
@@ -24,7 +25,7 @@ $slider = $model->buscaRecentesSlides($conDb);
                     foreach ($slider as $key => $value) {
                 ?>
                         <div class="carousel-item  <?= $key === 0 ? "active" : "" ?>">
-                            <img src="<?= SITE_URL . 'assets/images/blog/' . $value->Img1 ?>" class="d-block mx-auto" alt="...">
+                            <img src="<?= SITE_URL . 'assets/images/slides/' . $value->Imagem ?>" class="d-block mx-auto img-fluid" alt="...">
                         </div>
                 <?php
                     }
@@ -126,26 +127,26 @@ $slider = $model->buscaRecentesSlides($conDb);
     <!-- CONTATO -->
     <div class="container" id="contato">
         <h2>Faça seu Orçamento!</h2>
-        <form method="POST" action="#" enctype="multipart/form-data" data-netlify-recaptcha="true" data-netlify="true" id="formulario">
+        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" placeholder="Informe seu nome" class="form-control" required>
+                    <label for="Nome">Nome:</label>
+                    <input type="text" name="Nome" id="Nome" placeholder="Informe seu nome" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control" required>
+                    <label for="Email">Email:</label>
+                    <input type="email" name="Email" id="Email" placeholder="Informe seu email" class="form-control" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3 mr-4">
-                    <label for="tipoProjeto">Tipo de Projeto:</label>
-                    <select required name="tipoProjeto" id="tipoProjeto" class="form-control">
+                    <label for="TipoProjeto">Tipo de Projeto:</label>
+                    <select required name="TipoProjeto" id="TipoProjeto" class="form-control">
                         <option value="0" selected disabled>Selecione...</option>
-                        <option value="Parede Personalizada">Parede Personalizada</option>
-                        <option value="Quadro Personalizado">Quadro Personalizado</option>
-                        <option value="Lettering para Publicidade">Lettering para Publicidade</option>
-                        <option value="Lettering Geral">Lettering Geral</option>
+                        <option value="1">Parede Personalizada</option>
+                        <option value="2">Quadro Personalizado</option>
+                        <option value="3">Lettering para Publicidade</option>
+                        <option value="4">Lettering Geral</option>
                     </select>
                 </div>
                 <!-- <div class="form group col-md-3">
@@ -155,13 +156,8 @@ $slider = $model->buscaRecentesSlides($conDb);
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="descricao">Descreva seu projeto:</label>
-                    <textarea required name="descricao" id="descricao" cols="30" rows="7" class="form-control" placeholder="Tente Descrever ao máximo o que será necessário, e se possivel, as medidas do mesmo"></textarea>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <div data-netlify-recaptcha="true"></div>
+                    <label for="Descricao">Descreva seu projeto:</label>
+                    <textarea required name="Descricao" id="Descricao" cols="30" rows="7" class="form-control" placeholder="Tente Descrever ao máximo o que será necessário, e se possivel, as medidas do mesmo"></textarea>
                 </div>
             </div>
             <div class="form-row">
@@ -177,6 +173,7 @@ $slider = $model->buscaRecentesSlides($conDb);
             </div>
         </form>
     </div>
+
     <!-- WPP LINK  -->
     <a class="whatsapp" href="https://api.whatsapp.com/send?phone=5532999385459" target="blank"><i class="fab fa-whatsapp"></i></a>
     <!-- WPP LINK -->

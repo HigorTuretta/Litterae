@@ -1,12 +1,21 @@
 <?php
+require_once "lib/Seguranca.php";
 
+// Verifica se o usuário está logado para continuar
+
+Seguranca::esta_logado(1);
+
+//
 
 require_once 'lib/Formulario.php';
 require_once $pasta . '/modelPortifolio.php';
+require_once $pasta . '/modelCategorias.php';
 
 $model = new modelPortifolio();
+$modelCategorias = new modelCategorias();
+
 $dados = $model->buscaCodPostagem($conDb, $id);
-$categorias = $model->buscaCategoria($conDb);
+$categorias = $modelCategorias->buscaCategoriaAtivas($conDb);
 
 $descricao = Formulario::set_value("Descricao");
 
@@ -24,7 +33,7 @@ $descricao = Formulario::set_value("Descricao");
 
             <div class="col-2" style="padding-top: 25px; text-align: right;">
 
-                <a href="<?= SITE_URL . "listaUsuario" ?>" title="Lista de Usuário"><i class="ti-layout-grid3 custom_botao"></i></a>
+                <a href="<?= SITE_URL . "listaPortifolio" ?>" title="Lista de Postagens"><i class="fas fa-list"></i></a>
 
             </div>
 
@@ -83,8 +92,8 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="imgCapa">Imagem da Capa (480x360): </label>
-                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="imgCapa" id="imgCapa">
+                    <label for="ImgCapa">Imagem da Capa (480x360): </label>
+                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="ImgCapa" id="ImgCapa">
                 </div>
                 <div class="form-group col-md-6">
                     <input type="hidden" name="ExcluirCapa" value="<?= trim(Formulario::set_value("ImgCapa", "")) ?>">
@@ -93,8 +102,8 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img01">Imagem 01 (450x450): </label>
-                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img01" id="img01">
+                    <label for="Img1">Imagem 01 (450x450): </label>
+                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="Img1" id="Img1">
                 </div>
                 <div class="form-group col-md-6">
                     <input type="hidden" name="ExcluirImg1" value="<?= trim(Formulario::set_value("Img1", "")) ?>">
@@ -103,28 +112,31 @@ $descricao = Formulario::set_value("Descricao");
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img02">Imagem 02 (450x450): </label>
-                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img02" id="img02">
+                    <label for="Img2">Imagem 02 (450x450): </label>
+                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="Img2" id="Img2">
                 </div>
                 <div class="form-group col-md-6">
+                    <input type="hidden" name="ExcluirImg2" value="<?= trim(Formulario::set_value("Img2", "")) ?>">
                     <img class="form-images" src="<?= SITE_URL . "assets/images/blog/" . trim(Formulario::set_value("Img2", "")) ?>" alt="" srcset="">
                 </div>
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img03">Imagem 03 (450x450): </label>
-                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img03" id="img03">
+                    <label for="Img3">Imagem 03 (450x450): </label>
+                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="Img3" id="Img3">
                 </div>
                 <div class="form-group col-md-6">
+                    <input type="hidden" name="ExcluirImg3" value="<?= trim(Formulario::set_value("Img3", "")) ?>">
                     <img class="form-images" src="<?= SITE_URL . "assets/images/blog/" . trim(Formulario::set_value("Img3", "")) ?>" alt="" srcset="">
                 </div>
             </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
-                    <label for="img03">Imagem 04 (450x450): </label>
-                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="img03" id="img03">
+                    <label for="Img4">Imagem 04 (450x450): </label>
+                    <input accept="image/png, image/jpg, image/jpeg, image/gif" type="file" name="Img4" id="Img4">
                 </div>
                 <div class="form-group col-md-6">
+                    <input type="hidden" name="ExcluirImg4" value="<?= trim(Formulario::set_value("Img4", "")) ?>">
                     <img class="form-images" src="<?= SITE_URL . "assets/images/blog/" . trim(Formulario::set_value("Img4", "")) ?>" alt="" srcset="">
                 </div>
             </div>

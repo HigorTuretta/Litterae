@@ -1,20 +1,21 @@
 <?php
+
 require_once "lib/Seguranca.php";
-    
+
 // Verifica se o usuário está logado para continuar
 
-Seguranca::esta_logado( 1 );
+Seguranca::esta_logado(1);
 
 //
 
-require_once "modelPortifolio.php";
+require_once "modelUsuario.php";
 
-$model = new modelPortifolio();
+$model = new modelUsuario();
 $dados = $model->lista($conDb);
 
 ?>
 <section class="Padrao">
-    <div class="container pTitle pb-5 ">
+    <div class="container">
 
         <?php
         if (isset($_SESSION["msgSucesso"])) {
@@ -54,7 +55,7 @@ $dados = $model->lista($conDb);
 
             <div class="col-7">
 
-                <h3>Lista de Postagens</h3>
+                <h3>Lista de Usuários</h3>
 
             </div>
 
@@ -62,11 +63,9 @@ $dados = $model->lista($conDb);
             </div>
 
             <div class="col-1">
-
-                <a href="<?= SITE_URL . "formPortifolio/novo/0" ?>" title="Novo">
-                    <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
+                <a href="<?= SITE_URL . "formUsuario/novo/0" ?>" title="Novo">
+                <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
                 </a>
-
             </div>
             <div class="col-1 mt-3 mb-3">
                 <a href="<?= SITE_URL ?>areaAdministrativa" class="btn btn-danger">Voltar</a>
@@ -78,13 +77,13 @@ $dados = $model->lista($conDb);
             <div class="col-12">
 
                 <table border="1" class="table table-hover table-condensed" name="tbListaUsuario" id="tbListaUsuario">
-                    <thead class="thead-dark">
+                    <thead class="thead-light">
                         <tr>
-                            <th style="width: 13%;">Status</th>
-                            <th>Título</th>
-                            <th>Sub-Título</th>
-                            <th style="width: 20%;">Data da postagem</th>
-                            <th style="width: 12%;">Opções</th>
+                            <th style="width: 10%;">Status</th>                           
+                            <th>Login</th>
+                            <th>Nome</th>                           
+                            <th style="width: 12%;">Nível</th>
+                            <th style="width: 10%;">Opções</th>
                         </tr>
                     </thead>
 
@@ -98,14 +97,14 @@ $dados = $model->lista($conDb);
                         ?>
 
                                 <tr>
-                                    <td align="center"><?= $model->mostraStatus($value->StatusPostagem) ?></td>
-                                    <td><?= $value->Titulo ?></td>
-                                    <td><?= $value->SubTitulo ?></td>
-                                    <td><?= $value->dataPostagem ?></td>
-                                    <td align="center">
-                                        <a class="mr-1" href="<?= SITE_URL . "formPortifolio/visualizar/" . $value->codPublicacao ?>" title="Visualizar"><i class="far fa-eye"> </i></a>
-                                        <a href="<?= SITE_URL . "formPortifolio/alterar/" . $value->codPublicacao ?>" title="Alterar"><i class="far fa-edit"></i> </a>
-                                        <a class="ml-1" href="<?= SITE_URL . "formPortifolio/excluir/" . $value->codPublicacao ?>" title="Excluir"><i class="far fa-trash-alt"> </i></a>
+                                    <td align="center"><?= $model->mostraStatus($value->StatusCadastro) ?></td>                                    
+                                    <td><?= $value->Login ?></td>
+                                    <td><?= $value->NomeCompleto ?></td>                                  
+                                    <td><?= $model->mostraNivel($value->Nivel) ?></td>
+                                    <td>
+                                        <a class="mr-1" href="<?= SITE_URL . "formUsuario/visualizar/" . $value->CodUsuario ?>" title="Visualizar"><i class="far fa-eye"> </i></a>
+                                        <a href="<?= SITE_URL . "formUsuario/alterar/" . $value->CodUsuario ?>" title="Alterar"><i class="far fa-edit"></i></a>
+                                        <a class="ml-1" href="<?= SITE_URL . "formUsuario/excluir/" . $value->CodUsuario ?>" title="Excluir"><i class="far fa-trash-alt"> </i></a>
                                     </td>
                                 </tr>
 

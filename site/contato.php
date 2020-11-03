@@ -11,26 +11,26 @@
             <a href="https://www.facebook.com/litterae.arte" target="blank"><i class="fab fa-facebook-square"></i></a>
         </div>
         <hr>
-        <form method="POST" action="#" enctype="multipart/form-data" data-netlify-recaptcha="true" data-netlify="true" id="formulario">
+        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data"  method="POST" >
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" placeholder="Informe seu nome" class="form-control" required>
+                    <label for="Nome">Nome:</label>
+                    <input type="text" name="Nome" id="Nome" placeholder="Informe seu nome" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" placeholder="Informe seu email" class="form-control" required>
+                    <label for="Email">Email:</label>
+                    <input type="email" name="Email" id="Email" placeholder="Informe seu email" class="form-control" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-3 mr-4">
-                    <label for="tipoProjeto">Tipo de Projeto:</label>
-                    <select required name="tipoProjeto" id="tipoProjeto" class="form-control">
+                    <label for="TipoProjeto">Tipo de Projeto:</label>
+                    <select required name="TipoProjeto" id="TipoProjeto" class="form-control">
                         <option value="0" selected disabled>Selecione...</option>
-                        <option value="Parede Personalizada">Parede Personalizada</option>
-                        <option value="Quadro Personalizado">Quadro Personalizado</option>
-                        <option value="Lettering para Publicidade">Lettering para Publicidade</option>
-                        <option value="Lettering Geral">Lettering Geral</option>
+                        <option value="1">Parede Personalizada</option>
+                        <option value="2">Quadro Personalizado</option>
+                        <option value="3">Lettering para Publicidade</option>
+                        <option value="4">Lettering Geral</option>
                     </select>
                 </div>
                 <!-- <div class="form group col-md-3">
@@ -40,8 +40,8 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
-                    <label for="descricao">Descreva seu projeto:</label>
-                    <textarea required name="descricao" id="descricao" cols="30" rows="7" class="form-control" placeholder="Tente Descrever ao máximo o que será necessário, e se possivel, as medidas do mesmo"></textarea>
+                    <label for="Descricao">Descreva seu projeto:</label>
+                    <textarea required name="Descricao" id="Descricao" cols="30" rows="7" class="form-control" placeholder="Tente Descrever ao máximo o que será necessário, e se possivel, as medidas do mesmo"></textarea>
                 </div>
             </div>
             <div class="form-row">

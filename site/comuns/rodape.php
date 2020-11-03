@@ -29,13 +29,14 @@
         <script src="<?= SITE_URL . "assets/js/jquery-3.5.1.min.js" ?>"></script>
         <script src="<?= SITE_URL . "assets/js/app.js" ?>"></script>
         <script src="<?= SITE_URL . "assets/js/package/dist/sweetalert2.all.min.js" ?>"></script>
-        <script src="<?= SITE_URL . "assets/ckeditor/ckeditor.js"?>"></script>
+        <script src="<?= SITE_URL . "assets/ckeditor/ckeditor.js" ?>"></script>
         <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="https://kit.fontawesome.com/243351fe15.js" crossorigin="anonymous"></script>
         <script src="<?= SITE_URL . "assets/js/bootstrap.min.js" ?>"></script>
     </div>
+
 </body>
 
 </html>

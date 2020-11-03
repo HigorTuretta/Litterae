@@ -7,9 +7,9 @@ Seguranca::esta_logado( 1 );
 
 //
 
-require_once "modelPortifolio.php";
+require_once "modelSlides.php";
 
-$model = new modelPortifolio();
+$model = new modelSlides();
 $dados = $model->lista($conDb);
 
 ?>
@@ -54,7 +54,7 @@ $dados = $model->lista($conDb);
 
             <div class="col-7">
 
-                <h3>Lista de Postagens</h3>
+                <h3>Lista de Slides</h3>
 
             </div>
 
@@ -63,7 +63,7 @@ $dados = $model->lista($conDb);
 
             <div class="col-1">
 
-                <a href="<?= SITE_URL . "formPortifolio/novo/0" ?>" title="Novo">
+                <a href="<?= SITE_URL . "formSlide/novo/0" ?>" title="Novo">
                     <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
                 </a>
 
@@ -77,13 +77,11 @@ $dados = $model->lista($conDb);
 
             <div class="col-12">
 
-                <table border="1" class="table table-hover table-condensed" name="tbListaUsuario" id="tbListaUsuario">
+                <table border="1" class="table table-hover table-condensed" name="tbListaSlides" id="tbListaSlides">
                     <thead class="thead-dark">
                         <tr>
-                            <th style="width: 13%;">Status</th>
-                            <th>Título</th>
-                            <th>Sub-Título</th>
-                            <th style="width: 20%;">Data da postagem</th>
+                            <th style="width: 13%;">Código</th>
+                            <th>Status</th>                         
                             <th style="width: 12%;">Opções</th>
                         </tr>
                     </thead>
@@ -98,14 +96,12 @@ $dados = $model->lista($conDb);
                         ?>
 
                                 <tr>
-                                    <td align="center"><?= $model->mostraStatus($value->StatusPostagem) ?></td>
-                                    <td><?= $value->Titulo ?></td>
-                                    <td><?= $value->SubTitulo ?></td>
-                                    <td><?= $value->dataPostagem ?></td>
+                                    <td><?= $value->codSlide ?></td>
+                                    <td align="center"><?= $model->mostraStatus($value->StatusSlide) ?></td>                                                                
                                     <td align="center">
-                                        <a class="mr-1" href="<?= SITE_URL . "formPortifolio/visualizar/" . $value->codPublicacao ?>" title="Visualizar"><i class="far fa-eye"> </i></a>
-                                        <a href="<?= SITE_URL . "formPortifolio/alterar/" . $value->codPublicacao ?>" title="Alterar"><i class="far fa-edit"></i> </a>
-                                        <a class="ml-1" href="<?= SITE_URL . "formPortifolio/excluir/" . $value->codPublicacao ?>" title="Excluir"><i class="far fa-trash-alt"> </i></a>
+                                        <a class="mr-1" href="<?= SITE_URL . "formSlide/visualizar/" . $value->codSlide ?>" title="Visualizar"><i class="far fa-eye"> </i></a>
+                                        <a href="<?= SITE_URL . "formSlide/alterar/" . $value->codSlide ?>" title="Alterar"><i class="far fa-edit"></i> </a>
+                                        <a class="ml-1" href="<?= SITE_URL . "formSlide/excluir/" . $value->codSlide ?>" title="Excluir"><i class="far fa-trash-alt"> </i></a>
                                     </td>
                                 </tr>
 

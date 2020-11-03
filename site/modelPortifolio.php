@@ -3,20 +3,6 @@
 
 class modelPortifolio 
 {
-        
-    
-    /*
-     * Buscar publicacao usuário pelo campo codPublicacao
-     */
-    function buscaCategoria($conDb){
-        $modelRsc = $conDb->db_select("SELECT * FROM categoria WHERE StatusCategoria = 'A'");
-
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
-            return array();
-        } else {
-            return $conDb->db_busca_dados_all($modelRsc);
-        }
-    }
 
     function buscaRecentes($conDb){
         $modelRsc = $conDb->db_select("SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem DESC LIMIT 6");
@@ -112,8 +98,8 @@ class modelPortifolio
     {
         
         $rs = $conDb->db_insert( "INSERT INTO blog 
-                                  ( CodCategoria, Titulo, SubTitulo, Descricao, ImgCapa, Img1 )
-                                  VALUES ( ?, ?, ?, ?, ? ,?)",
+                                  ( CodCategoria, Titulo, SubTitulo, Descricao, ImgCapa, Img1, Img2, Img3, Img4 )
+                                  VALUES ( ?, ?, ?, ?, ? ,?, ?, ?, ?)",
                                  $data );
         
         if ($rs > 0) {
@@ -133,7 +119,7 @@ class modelPortifolio
     {
     
         $rs = $conDb->db_update( "UPDATE blog
-                                  SET CodCategoria = ? , Titulo = ?, SubTitulo = ?, Descricao = ?, ImgCapa = ?, Img1 = ?
+                                  SET CodCategoria = ? , Titulo = ?, SubTitulo = ?, Descricao = ?, ImgCapa = ?, Img1 = ?, Img2 = ?, Img3 = ?, Img4 = ?
                                   WHERE codPublicacao = ? ",
                                 $data );
         
