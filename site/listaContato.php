@@ -70,7 +70,7 @@ $dados = $model->lista($conDb);
 
             <div class="col-12">
 
-                <table border="1" class="table table-hover table-condensed" name="tbListaCategoria" id="tbListaCategoria">
+                <table border="1" class="table table-hover table-condensed" name="tblListaContato" id="tblListaContato">
                     <thead class="thead-dark">
                         <tr>
                             <th>Nome</th>

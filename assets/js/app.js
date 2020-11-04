@@ -29,15 +29,11 @@ $(document).ready(function ($) {
     $formulario.submit(e => {
         e.preventDefault();
 
-        const $action = $formulario.attr('action');
-        const $data = $formulario.serialize();
-        $.post($action, $data).then(() => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Mensagem Enviada!',
-                text: 'Muito obrigado!',
-                footer: '<a href="/">Voltar para home</a>'
-            });
+        Swal.fire({
+            icon: 'success',
+            title: 'Mensagem Enviada!',
+            text: 'Muito obrigado!',
+            footer: '<a href="/">Voltar para home</a>'
         });
     });
 });
@@ -57,4 +53,3 @@ $('a[href^="#"]').on('click', function (event) {
 });
 
 navSlide();
-
