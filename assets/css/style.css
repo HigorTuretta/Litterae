@@ -72,6 +72,9 @@ h4 {
 
 /* NAVBAR */
 
+.header_area nav {
+    z-index: 20;
+}
 nav {
     transition: all 0.3s;
 }
@@ -99,6 +102,11 @@ nav {
     line-height: 1.2;
     text-shadow: -5px 0px 0px rgba(225, 25, 255, 0.55);
     margin-top: 20px;
+}
+
+.logo img{
+    width: 170px;
+    height: 55px;
 }
 
 .logo a {
@@ -145,6 +153,7 @@ nav {
 
 @media screen and (max-width: 1046px) {
     #wrapper {
+        position: absolute;
         width: 100%;
         height: 100%;
         overflow-x: hidden
@@ -241,16 +250,28 @@ nav {
 @media screen and (max-width:875px) {
     .carroca img {
         height: 400px;
+        width: 700px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .carroca img {
+        height: 330px;
+        width: 560px;
     }
 }
 
 /* SLIDES END */
 
 /* SOBRE BEGIN */
-
 .text-sobre {
     font-family: "beyond_the_mountains";
     font-size: 30px;
+}
+
+.text-sobre img {
+    width: 145px;
+    height: 55px;
 }
 
 /* SOBRE END */
@@ -270,6 +291,12 @@ nav {
     margin: 30px;
 }
 
+@media screen and (max-width: 500px){
+    .container-personalized{
+        margin: 0;
+    }
+}
+
 .row-personalized {
     width: 100%;
     display: flex;
@@ -278,7 +305,7 @@ nav {
 }
 
 .image img {
-    width: 460px;
+    width: 480px;
     height: 300px;
     opacity: 1;
     position: relative;
@@ -465,6 +492,10 @@ form input, select, textarea {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 40px;
+}
+#contato h2 img{
+    width: 300px;
+    height: 50px;
 }
 
 /* CONTATO END */

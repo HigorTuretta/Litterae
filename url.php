@@ -3,10 +3,10 @@
     /*
      * a variavel atual recebe o que estiver na variável
      * pag, caso não tenha nada a variavel atual recebe
-     * login
+     * home
      */
 
-    $atual = (isset($_GET['pag']) ? $_GET['pag'] : 'home' );
+    $atual = (isset($_GET['pag']) ? $_GET['pag'] : 'start' );
     $pasta = 'site';
     
     /*

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.35" ?>">
+    <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.48" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/css/bootstrap.min.css" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/js/package/dist/sweetalert2.min.css" ?>">
 
@@ -22,7 +22,7 @@
             <nav class="navbar-personalized-fixed" id="navbar">
                 <div class="logo">
                     <a href="<?= SITE_URL ?>home">
-                        <p class="litterae">Litterae</p>
+                        <img src="<?=SITE_URL . "assets/images/Logo.png"?>">
                     </a>
                 </div>
 

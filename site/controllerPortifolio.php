@@ -20,7 +20,7 @@ if ($acao != "Delete") {
     $nomeImg3 = $Img3['name'];
     $nomeImg4 = $Img4['name'];
 
-    $nomeTmpImgCapa = $Img2['tmp_name'];
+    $nomeTmpImgCapa = $ImgCapa['tmp_name'];
     $nomeTmpImg1 = $Img1['tmp_name'];
     $nomeTmpImg2 = $Img2['tmp_name'];
     $nomeTmpImg3 = $Img3['tmp_name'];
@@ -72,8 +72,9 @@ if ($acao != "Delete") {
 
 if ($acao == "Insert") {
 
-    if (($upload1 == true) && ($upload2 == true) && ($upload3 == true) && ($upload4 == true) && ($uploadCapa == true)) {
+    if (($uploadCapa == true) && ($upload1 == true) && ($upload2 == true) && ($upload3 == true) && ($upload4 == true) ) {
 
+        
         $uploadCapa = move_uploaded_file($nomeTmpImgCapa, $dir . $nomeImgCapa);
         // Verfica se o arquivo foi movido com sucesso
         if (!$uploadCapa) {
@@ -253,7 +254,7 @@ if ($acao == "Insert") {
     $result = $model->delete($conDb, $_POST['CodPublicacao']);
 
     if ($result) {
-        $_SESSION["msgSucesso"] = "Categoria excluída com sucesso !";
+        $_SESSION["msgSucesso"] = "Postagem excluída com sucesso !";
 
         //exclui as imagens no servidor
         unlink("assets/images/blog/" . trim($_POST["ExcluirCapa"]));
@@ -262,7 +263,7 @@ if ($acao == "Insert") {
         unlink("assets/images/blog/" . trim($_POST["ExcluirImg3"]));
         unlink("assets/images/blog/" . trim($_POST["ExcluirImg4"]));
     } else {
-        $_SESSION["msgError"] = "Não foi possível excluir a categoria no banco de dados !";
+        $_SESSION["msgError"] = "Não foi possível excluir a postagem no banco de dados !";
     }
 
 ?>

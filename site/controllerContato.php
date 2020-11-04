@@ -23,7 +23,7 @@ if ($acao == "Insert") {
 
 ?>
     <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>contato";
+        window.location = "<?= SITE_URL ?>home";
     </script>
 <?php
 

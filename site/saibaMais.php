@@ -31,7 +31,7 @@ $descricao = Formulario::set_value("Descricao");
         <div class="read-more-images">
             <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img1", "") ?>" alt="Imagem 01">
 
-            <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("ImgCapa", "") ?>" alt="Imagem 02">
+            <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img2", "") ?>" alt="Imagem 02">
         </div>
         <div class="read-more-images">
             <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img3", "") ?>" alt="Imagem 03">
