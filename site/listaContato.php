@@ -113,7 +113,7 @@ $dados = $model->lista($conDb);
                                         }
                                         ?>
                                         <a href="<?= SITE_URL . "formContato/alterar/" . $value->codContato ?>" title="Visualizar/Alterar"><i class="far fa-edit"></i> </a>
-                                        <a class="ml-1" href="<?= SITE_URL . "formContato/excluir/" . $value->codContato ?>" title="Excluir"><i class="far fa-trash-alt"> </i></a>
+                                        <a class="ml-1" onclick="return confirm('Tem certeza que deseja excluir o registro?')" href="<?= SITE_URL . "controllerContato/Delete/" . $value->codContato ?>" title="Excluir"><i class="far fa-trash-alt"> </i></a>
                                     </td>
                                 </tr>
 
@@ -137,4 +137,6 @@ $dados = $model->lista($conDb);
         </div>
 
     </div>
+
+
 </section>

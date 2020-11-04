@@ -51,7 +51,7 @@ if ($acao == "Insert") {
 
 } else if ($acao == "Delete") {
 
-    $result = $model->delete($conDb, $_POST['codContato']);
+    $result = $model->delete($conDb, $id);
 
     if ($result) {
         $_SESSION["msgSucesso"] = "Pedido excluído com sucesso !";

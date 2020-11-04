@@ -36,8 +36,8 @@ $(document).ready(function ($) {
             footer: '<a href="/">Voltar para home</a>'
         });
     });
-});
 
+});
 
 $('a[href^="#"]').on('click', function (event) {
 
