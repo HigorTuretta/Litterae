@@ -11,7 +11,7 @@
             <a href="https://www.facebook.com/litterae.arte" target="blank"><i class="fab fa-facebook-square"></i></a>
         </div>
         <hr>
-        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data"  method="POST"  id="formulario">
+        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data"  method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="Nome">Nome:</label>
