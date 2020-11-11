@@ -80,6 +80,8 @@ if ($acao == "Insert") {
     //confere se a imagem ja existe
     if (trim($arUser['Imagem']) != $_FILES['Imagem']['name'] and $_FILES['Imagem']['name'] != "") {
 
+        //pasta para onde o arquivo será movido no webSite
+        $pasta = 'assets/images/';
 
         //lista de tipos de arquivos permitidos
         $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
