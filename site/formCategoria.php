@@ -35,15 +35,15 @@ $dados = $model->buscaCodCategoria($conDb, $id);
         <form action="<?= SITE_URL . "controllerCategorias/" . Formulario::formAcao($acao) ?>" method="POST" class="form" name="formCategorias" id="formCategorias" enctype="multipart/form-data">
 
             <div class="form-row">
-                <div class="form-group col-md-1">
+                <div class="form-group col-md-2">
                     <label for="codCategoria">Código</label>
                     <input type="number" readonly="readonly" class="form-control" name="codCategoria" id="codCategoria" value="<?= Formulario::set_value("codCategoria", 0) ?>">
                 </div> 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-5">
                     <label for="descricao">Descrição</label>
-                    <input type="text" class="form-control" name="descricao" id="descricao" value="<?= Formulario::set_value("Descricao", 0) ?>">
+                    <input type="text" class="form-control" name="descricao" id="descricao" value="<?= Formulario::set_value("Descricao", "") ?>">
                 </div>                          
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-5">
                     <label for="statusCategoria">Status da Categoria</label>
                     <select required name="statusCategoria" id="statusCategoria" class="form-control">
                         <option disabled value="" <?= (Formulario::set_value("StatusCategoria") == ""  ? 'selected="selected"' : "") ?>>Selecione...</option>

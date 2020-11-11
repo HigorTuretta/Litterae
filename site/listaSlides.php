@@ -1,9 +1,10 @@
 <?php
 require_once "lib/Seguranca.php";
-    
+require_once "lib/Formulario.php";
+
 // Verifica se o usuário está logado para continuar
 
-Seguranca::esta_logado( 1 );
+Seguranca::esta_logado(1);
 
 //
 
@@ -16,39 +17,7 @@ $dados = $model->lista($conDb);
 <section class="Padrao">
     <div class="container pTitle pb-5 ">
 
-        <?php
-        if (isset($_SESSION["msgSucesso"])) {
-        ?>
-            <div class="row">
-                <div class="col-12">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <?= $_SESSION["msgSucesso"] ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <?php
-            unset($_SESSION["msgSucesso"]);
-        }
-
-        if (isset($_SESSION["msgError"])) {
-        ?>
-            <div class="row">
-                <div class="col-12">
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <?= $_SESSION["msgError"] ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <?php
-            unset($_SESSION["msgError"]);
-        }
-        ?>
+        <?= Formulario::exibeMensagem() ?>
 
         <div class="row">
 
@@ -81,7 +50,7 @@ $dados = $model->lista($conDb);
                     <thead class="thead-dark">
                         <tr>
                             <th style="width: 13%;">Código</th>
-                            <th>Status</th>                         
+                            <th>Status</th>
                             <th style="width: 12%;">Opções</th>
                         </tr>
                     </thead>
@@ -97,7 +66,7 @@ $dados = $model->lista($conDb);
 
                                 <tr>
                                     <td><?= $value->codSlide ?></td>
-                                    <td align="center"><?= $model->mostraStatus($value->StatusSlide) ?></td>                                                                
+                                    <td align="center"><?= $model->mostraStatus($value->StatusSlide) ?></td>
                                     <td align="center">
                                         <a class="mr-1" href="<?= SITE_URL . "formSlide/visualizar/" . $value->codSlide ?>" title="Visualizar"><i class="far fa-eye"> </i></a>
                                         <a href="<?= SITE_URL . "formSlide/alterar/" . $value->codSlide ?>" title="Alterar"><i class="far fa-edit"></i> </a>

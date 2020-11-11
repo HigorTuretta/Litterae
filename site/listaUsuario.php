@@ -1,6 +1,7 @@
 <?php
 
 require_once "lib/Seguranca.php";
+require_once "lib/Formulario.php";
 
 // Verifica se o usuário está logado para continuar
 
@@ -17,39 +18,7 @@ $dados = $model->lista($conDb);
 <section class="Padrao">
     <div class="container">
 
-        <?php
-        if (isset($_SESSION["msgSucesso"])) {
-        ?>
-            <div class="row">
-                <div class="col-12">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <?= $_SESSION["msgSucesso"] ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <?php
-            unset($_SESSION["msgSucesso"]);
-        }
-
-        if (isset($_SESSION["msgError"])) {
-        ?>
-            <div class="row">
-                <div class="col-12">
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <?= $_SESSION["msgError"] ?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        <?php
-            unset($_SESSION["msgError"]);
-        }
-        ?>
+        <?= Formulario::exibeMensagem() ?>
 
         <div class="row">
 
@@ -64,7 +33,7 @@ $dados = $model->lista($conDb);
 
             <div class="col-1">
                 <a href="<?= SITE_URL . "formUsuario/novo/0" ?>" title="Novo">
-                <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
+                    <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
                 </a>
             </div>
             <div class="col-1 mt-3 mb-3">
@@ -79,9 +48,9 @@ $dados = $model->lista($conDb);
                 <table border="1" class="table table-hover table-condensed" name="tbListaUsuario" id="tbListaUsuario">
                     <thead class="thead-light">
                         <tr>
-                            <th style="width: 10%;">Status</th>                           
+                            <th style="width: 10%;">Status</th>
                             <th>Login</th>
-                            <th>Nome</th>                           
+                            <th>Nome</th>
                             <th style="width: 12%;">Nível</th>
                             <th style="width: 10%;">Opções</th>
                         </tr>
@@ -97,9 +66,9 @@ $dados = $model->lista($conDb);
                         ?>
 
                                 <tr>
-                                    <td align="center"><?= $model->mostraStatus($value->StatusCadastro) ?></td>                                    
+                                    <td align="center"><?= $model->mostraStatus($value->StatusCadastro) ?></td>
                                     <td><?= $value->Login ?></td>
-                                    <td><?= $value->NomeCompleto ?></td>                                  
+                                    <td><?= $value->NomeCompleto ?></td>
                                     <td><?= $model->mostraNivel($value->Nivel) ?></td>
                                     <td>
                                         <a class="mr-1" href="<?= SITE_URL . "formUsuario/visualizar/" . $value->CodUsuario ?>" title="Visualizar"><i class="far fa-eye"> </i></a>

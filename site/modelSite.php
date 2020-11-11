@@ -124,153 +124,246 @@ class modelSlides
     }
 }
 
-class modelPortifolio 
+class modelPortifolio
 {
 
-    function buscaRecentes($conDb){
+    // Busca postagem mais recentes para alimentar a página home do site
+    function buscaRecentes($conDb)
+    {
         $modelRsc = $conDb->db_select("SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem DESC LIMIT 6");
 
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
             return array();
         } else {
             return $conDb->db_busca_dados_all($modelRsc);
         }
     }
 
-    function buscaRecentesSlides($conDb){
-        $modelRsc = $conDb->db_select("SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem DESC LIMIT 3");
+    // busca a categoria pelo codigo de postagem
+    function buscaCategoriaPorCod($conDb, $codPostagem)
+    {
+        $modelRsc = $conDb->db_select(
+            "SELECT * FROM categoria WHERE codPublicacao = ?",
+            array($codPostagem)
+        );
 
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
             return array();
         } else {
             return $conDb->db_busca_dados_all($modelRsc);
         }
     }
 
-    function buscaCategoriaPorCod($conDb, $codPostagem){
-        $modelRsc = $conDb->db_select("SELECT * FROM categoria WHERE codPublicacao = ?", 
-        array($codPostagem));
-
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
-            return array();
-        } else {
-            return $conDb->db_busca_dados_all($modelRsc);
-        }
-    }
-
+    // busca pelo codigo de postagem
     function buscaCodPostagem($conDb, $codPostagem)
     {
-        
-        $modelRsc = $conDb->db_select( "SELECT * FROM blog WHERE codPublicacao = ?", 
-                                  array($codPostagem) );
-        
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+
+        $modelRsc = $conDb->db_select(
+            "SELECT * FROM blog WHERE codPublicacao = ?",
+            array($codPostagem)
+        );
+
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
             return array();
         } else {
             $aRet = $conDb->db_busca_array_all($modelRsc);
             return $aRet[0];
         }
-        
     }
-
 
     /*
-     * Busca publicações cadastradas na base de dados
+     * Busca publicações cadastradas na base de dados ordenando da mais recente para a mais antiga
      */
-    
-    function lista($conDb) {
-        
-        $modelRsc = $conDb->db_select( "SELECT * FROM blog ORDER BY dataPostagem desc" );
-        
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+
+    function lista($conDb)
+    {
+
+        $modelRsc = $conDb->db_select("SELECT * FROM blog ORDER BY dataPostagem desc");
+
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
             return array();
         } else {
             return $conDb->db_busca_dados_all($modelRsc);
         }
-        
     }
 
-    function listaHabilitados($conDb) {
-        
-        $modelRsc = $conDb->db_select( "SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem desc" );
-        
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+    // Lista publicações habilitadas
+    function listaHabilitados($conDb)
+    {
+
+        $modelRsc = $conDb->db_select("SELECT * FROM blog WHERE StatusPostagem = 'H' ORDER BY dataPostagem desc");
+
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
             return array();
         } else {
             return $conDb->db_busca_dados_all($modelRsc);
         }
-        
     }
 
     /*
      * Retorna descrição do status
      */
-        
-    function mostraStatus($status) {
-        
-        return ($status == "H" ? "Habilitado" : "Desabilitado" );
-        
-    }
-      
-    
-    /*
-     * Insere uma nova categoria  na tabela categoria
-     */
-    
-    function insert($conDb, $data) 
+
+    function mostraStatus($status)
     {
-        
-        $rs = $conDb->db_insert( "INSERT INTO blog 
+
+        return ($status == "H" ? "Habilitado" : "Desabilitado");
+    }
+
+
+    /*
+     * Insere uma nova postagem 
+     */
+
+    function insert($conDb, $data)
+    {
+
+        $rs = $conDb->db_insert(
+            "INSERT INTO blog 
                                   ( CodCategoria, Titulo, SubTitulo, Descricao, ImgCapa, Img1, Img2, Img3, Img4 )
                                   VALUES ( ?, ?, ?, ?, ? ,?, ?, ?, ?)",
-                                 $data );
-        
+            $data
+        );
+
         if ($rs > 0) {
             return true;
         } else {
             return false;
         }
-                
     }
-    
+
 
     /*
-     * Altera os dados de uma categoria no banco
+     * Altera os dados de uma postagem
      */
-    
-    function update($conDb, $data) 
+
+    function update($conDb, $data)
     {
-    
-        $rs = $conDb->db_update( "UPDATE blog
+
+        $rs = $conDb->db_update(
+            "UPDATE blog
                                   SET CodCategoria = ? , Titulo = ?, SubTitulo = ?, Descricao = ?, ImgCapa = ?, Img1 = ?, Img2 = ?, Img3 = ?, Img4 = ?
                                   WHERE codPublicacao = ? ",
-                                $data );
-        
+            $data
+        );
+
         if ($rs > 0) {
             return true;
         } else {
             return false;
         }
-        
-    }    
-    
-    /*
-     * Excluir uma categoria do banco
-     */
-    
-    function delete($conDb, $codPublicacao) 
-    {
-    
-        $rs = $conDb->db_delete( "DELETE FROM blog WHERE codPublicacao = ? " , array( $codPublicacao ) );
-        
-        if ($rs > 0) {
-            return true;
-        } else {
-            return false;
-        }
-        
     }
-        
-    
+
+    /*
+     * Excluir uma postagem do banco
+     */
+
+    function delete($conDb, $codPublicacao)
+    {
+
+        $rs = $conDb->db_delete("DELETE FROM blog WHERE codPublicacao = ? ", array($codPublicacao));
+
+        if ($rs > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
+
+class modelSobreNos
+{
+
+     // busca pelo codigo 
+     function buscaCodSobre($conDb, $codSobre)
+     {
+ 
+         $modelRsc = $conDb->db_select(
+             "SELECT * FROM sobrenos WHERE codSobre = ?",
+             array($codSobre)
+         );
+ 
+         if ($conDb->db_num_linhas($modelRsc) == 0) {
+             return array();
+         } else {
+             $aRet = $conDb->db_busca_array_all($modelRsc);
+             return $aRet[0];
+         }
+     }
+
+    /*
+     * Busca dados da tabela sobrenos no banco 
+     */
+
+    function lista($conDb)
+    {
+
+        $modelRsc = $conDb->db_select("SELECT * FROM sobrenos ");
+
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
+            return array();
+        } else {
+            return $conDb->db_busca_dados_all($modelRsc);
+        }
+    }
+
+    /*
+     * Insere na tabela sobrenos
+     */
+
+    function insert($conDb, $data)
+    {
+
+        $rs = $conDb->db_insert(
+            "INSERT INTO sobrenos 
+                                  ( Titulo,  Descricao, Imagem )
+                                  VALUES ( ?, ?, ?)",
+            $data
+        );
+
+        if ($rs > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /*
+     * Altera os dados da tabela sobrenos
+     */
+
+    function update($conDb, $data)
+    {
+
+        $rs = $conDb->db_update(
+            "UPDATE sobrenos
+                                  SET Titulo = ?, Descricao = ?, Imagem = ?
+                                  WHERE codSobre = ? ",
+            $data
+        );
+
+        if ($rs > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /*
+     * Excluir do banco SobreNos
+     */
+
+    function delete($conDb, $codSobre)
+    {
+
+        $rs = $conDb->db_delete("DELETE FROM sobrenos WHERE codSobre = ? ", array($codSobre));
+
+        if ($rs > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}

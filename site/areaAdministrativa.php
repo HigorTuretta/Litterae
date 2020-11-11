@@ -25,6 +25,9 @@ $dados = $model->buscaNovosContatos($conDb);
             <a href="<?= SITE_URL ?>listaSlides" class="btn btn-success w-100">Editar Slides</a>
         </div>
         <div class="col-md-12 mb-3">
+            <a href="<?= SITE_URL ?>listaSobreNos" class="btn btn-secondary w-100">Editar Sobre nós</a>
+        </div>
+        <div class="col-md-12 mb-3">
             <a href="<?= SITE_URL ?>listaCategoria" class="btn btn-warning w-100">Editar Categorias</a>
         </div>
         <div class="col-md-12 mb-3">

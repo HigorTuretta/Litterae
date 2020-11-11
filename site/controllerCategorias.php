@@ -9,7 +9,7 @@ if ($acao == "Insert") {
 
     $data = array(
         $_POST['descricao'],
-        $_POST['statusSlide']
+        $_POST['statusCategoria']
     );
 
     $result = $model->insert($conDb, $data);
