@@ -46,7 +46,7 @@ $dados = $model->lista($conDb);
             <div class="col-12">
 
                 <table border="1" class="table table-hover table-condensed" name="tbListaUsuario" id="tbListaUsuario">
-                    <thead class="thead-light">
+                    <thead class="thead-dark">
                         <tr>
                             <th style="width: 10%;">Status</th>
                             <th>Login</th>
