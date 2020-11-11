@@ -8,7 +8,7 @@ Seguranca::esta_logado(1);
 //
 
 require_once 'lib/Formulario.php';
-require_once $pasta . '/modelPortifolio.php';
+require_once $pasta . '/modelSite.php';
 require_once $pasta . '/modelCategorias.php';
 
 $model = new modelPortifolio();

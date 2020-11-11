@@ -1,6 +1,6 @@
 <?php
 
-require_once "modelPortifolio.php";
+require_once "modelSite.php";
 
 $model = new modelPortifolio();
 $dados = $model->listaHabilitados($conDb);

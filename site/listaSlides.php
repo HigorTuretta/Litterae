@@ -7,7 +7,7 @@ Seguranca::esta_logado( 1 );
 
 //
 
-require_once "modelSlides.php";
+require_once "modelSite.php";
 
 $model = new modelSlides();
 $dados = $model->lista($conDb);

@@ -1,7 +1,6 @@
 <?php
 
-require_once "modelPortifolio.php";
-require_once "modelSlides.php";
+require_once "modelSite.php";
 
 $model = new modelPortifolio();
 $modelSlide = new modelSlides();

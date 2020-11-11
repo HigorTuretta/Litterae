@@ -8,7 +8,7 @@ Seguranca::esta_logado( 1 );
 //
 
 require_once 'lib/Formulario.php';
-require_once $pasta . '/modelSlides.php';
+require_once $pasta . '/modelSite.php';
 
 $model = new modelSlides();
 $dados = $model->buscaCodSlides($conDb, $id);

@@ -1,6 +1,6 @@
 <?php
 
-require_once $pasta . '/modelSlides.php';
+require_once $pasta . '/modelSite.php';
 
 $model = new modelSlides();
 $arUser = $model->buscaCodSlides($conDb, $_POST["codSlide"]);

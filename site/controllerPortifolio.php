@@ -1,6 +1,6 @@
 <?php
 
-require_once $pasta . '/modelPortifolio.php';
+require_once $pasta . '/modelSite.php';
 
 $model = new modelPortifolio();
 

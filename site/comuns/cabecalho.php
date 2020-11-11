@@ -36,6 +36,10 @@
                     <li>
                         <a href="<?= SITE_URL ?>contato">Orçamento</a>
                     </li>
+                    </li>
+                    <li>
+                        <a href="<?= SITE_URL ?>sobreNos">Sobre Nós</a>
+                    </li>
                 </ul>
 
                 <div class="burger">

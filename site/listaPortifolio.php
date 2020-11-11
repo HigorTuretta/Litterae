@@ -7,7 +7,7 @@ Seguranca::esta_logado( 1 );
 
 //
 
-require_once "modelPortifolio.php";
+require_once "modelSite.php";
 
 $model = new modelPortifolio();
 $dados = $model->lista($conDb);
