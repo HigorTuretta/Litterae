@@ -4,7 +4,7 @@ require_once 'lib/Formulario.php';
 require_once $pasta . '/modelSite.php';
 
 $model = new modelSobreNos();
-$dados = $model->buscaCodSobre($conDb, 2);
+$dados = $model->buscaCodSobre($conDb, 3);
 
 $descricao = Formulario::set_value("Descricao");
 
