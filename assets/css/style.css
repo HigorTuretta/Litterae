@@ -658,3 +658,26 @@ form input, select, textarea {
 }
 
 /* SAIBA MAIS END */
+
+
+/* SOBRE NOS BEGIN */
+
+.sobreNos-section {
+    margin-top: 20px;
+}
+.sobreNos-title {
+    font-family: 'beyond_the_mountains';
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.sobreNos-description img{
+    max-width: 250px;
+    max-height: 350px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+/* SOBRE NOS END */
