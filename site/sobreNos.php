@@ -10,7 +10,7 @@ $descricao = Formulario::set_value("Descricao");
 
 ?>
 
-<section class="sobreNos-section Padrao">
+<section class="sobreNos-section control-height Padrao">
     <div class="sobreNos-title">
         <h2 class="text-fluid"><?= Formulario::set_value("Titulo" , "")?></h2>
     </div>

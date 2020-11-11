@@ -681,3 +681,7 @@ form input, select, textarea {
 }
 
 /* SOBRE NOS END */
+
+.control-height{
+    height: 100vh;
+}

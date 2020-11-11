@@ -6,7 +6,7 @@ $model = new modelPortifolio();
 $dados = $model->listaHabilitados($conDb);
 
 ?>
-<section class="Padrao">
+<section class="Padrao control-height">
 
     <div class="pTitle">
         <h2 class="text-center">Portifólio Completo</h2>
