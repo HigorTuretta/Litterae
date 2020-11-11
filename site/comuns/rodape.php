@@ -25,11 +25,10 @@
         </footer>
 
 
-        <!-- scripts -->
-        <script src="<?= SITE_URL . "assets/js/jquery-3.5.1.min.js" ?>"></script>
+        <!-- scripts -->        
         <script src="<?= SITE_URL . "assets/js/app.js" ?>"></script>
         <script src="<?= SITE_URL . "assets/js/package/dist/sweetalert2.all.min.js" ?>"></script>
-        <script src="<?= SITE_URL . "assets/ckeditor/ckeditor.js"?>"></script>
+        <script src="<?= SITE_URL . "assets/util/ckeditor/ckeditor.js"?>"></script>
 
 
         <!-- Optional: include a polyfill for ES6 Promises for IE11 -->

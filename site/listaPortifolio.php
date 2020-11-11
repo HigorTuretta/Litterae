@@ -46,7 +46,7 @@ $dados = $model->lista($conDb);
 
             <div class="col-12">
 
-                <table border="1" class="table table-hover table-condensed" name="tbListaUsuario" id="tbListaUsuario">
+                <table border="1" class="table table-hover table-condensed" name="tblListaPortifolio" id="tblListaPortifolio">
                     <thead class="thead-dark">
                         <tr>
                             <th style="width: 13%;">Status</th>
@@ -99,3 +99,6 @@ $dados = $model->lista($conDb);
 
     </div>
 </section>
+
+
+<?= Formulario::setDataTable("tblListaPortifolio") ?>

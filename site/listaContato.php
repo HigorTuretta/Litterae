@@ -99,12 +99,8 @@ $dados = $model->lista($conDb);
                     </tbody>
 
                 </table>
-
             </div>
-
         </div>
-
     </div>
-
-
 </section>
+<?= Formulario::setDataTable("tblListaContato") ?>

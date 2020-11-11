@@ -95,3 +95,5 @@ $dados = $model->lista($conDb);
 
     </div>
 </section>
+
+<?= Formulario::setDataTable("tbListaSlides") ?>
