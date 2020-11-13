@@ -9,25 +9,28 @@ use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 require_once 'assets/util/phpmailer/vendor/autoload.php';
+$TipoProjeto = "";
 
+if($_POST['TipoProjeto'] == 1 ? $TipoProjeto =  "Parede Personalizada" : ($_POST['TipoProjeto'] == 2 ? $TipoProjeto = "Quadro Personalizado": ($_POST['TipoProjeto'] == 3 ? $TipoProjeto = "Lettering para publicidade" : $TipoProjeto = "Lettering Geral")));
+$mensagem = "Orçamento para " . $TipoProjeto . "<br><br> <p>" . $_POST['Descricao'] ."</p><br>Pedido Realizado por: " . $_POST['Nome']. "<br>Email: " . $_POST['Email']; 
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer();
 
 $mail->isSMTP();
-$mail->Charset     = "UTF-8";                          // identificação da língua de reprodução (português)
-$mail->STMPAuth    = true;                             // ativa o SMTP autenticado
-$mail->SMTPSecure  = "tls";                            // tipo de segurança utilizado
-$mail->Host        = "smtp.gmail.com";  // identifica o host utilizado no disparo (gmail)
-$mail->SMTPDebug  = 2;                
-$mail->Port        = 587;                              // indica a porta utilizada
-$mail->Username    = "contatolitterae.arte@gmail.com"; // usuário de e-mail para autenticação
-$mail->Password    =  "hi123456gor";                   // senha de e-mail para autenticação
-$mail->setFrom($_POST["Email"], $_POST["Nome"]);                  // e-mail do remetente
-                  
-$mail->addAddress("higorturetta@hotmail.com");   // e-mail destinatário
-$mail->isHTML(false);                                   // formato do texto de saída
-$mail->Subject     = $_POST["TipoProjeto"];              // assunto (título do e-mail)
-$mail->Body        = $_POST["Descricao"];          // Corpo do e-mail em HTML (destinado ao texto geral)
+$mail->CharSet      = "UTF-8";
+$mail->SMTPAuth     = true;                             // Ativa o SMTP autenticado
+$mail->SMTPSecure   = "tls";                            // Tipo de segurança
+$mail->Host         = "smtp.gmail.com";
+$mail->Port         = 587;
+$mail->Username     = "contatolitterae.arte@gmail.com";       // Usuário de e-mail para autenticação
+$mail->Password     = "hi123456gor";                       // Senha do e-mail de autenticação
+$mail->From         = $_POST["Email"];                  // E-mail remetente
+$mail->FromName     = $_POST["Nome"];                   // Nome do Remetente
+
+$mail->addAddress("higorturetta@hotmail.com", "Higor Turetta");    // E-mail Destinatário
+$mail->isHTML(true);                                   // formato do texto de saída
+$mail->Subject     = "Orçamento Solicitado";              // assunto (título do e-mail)
+$mail->Body        = $mensagem;          // Corpo do e-mail em HTML (destinado ao texto geral)
 // $mail->AltBody     = $cTextoCorpo;                  // corpo do texto em txt
 // $mail->addAttachment($arquivo['tmp_name'], $arquivo['name']);
 
