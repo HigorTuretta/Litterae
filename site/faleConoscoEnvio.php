@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-require 'assets/util/phpmailer/vendor/autoload.php';
+require_once 'assets/util/phpmailer/vendor/autoload.php';
 
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer();
@@ -22,9 +22,9 @@ $mail->SMTPDebug  = 2;
 $mail->Port        = 587;                              // indica a porta utilizada
 $mail->Username    = "contatolitterae.arte@gmail.com"; // usuário de e-mail para autenticação
 $mail->Password    =  "hi123456gor";                   // senha de e-mail para autenticação
-$mail->From        = $_POST["Email"];                  // e-mail do remetente
-$mail->FromName    = $_POST["Nome"];                   // nome do remetente
-$mail->addAddress("contatolitterae.arte@gmail.com");   // e-mail destinatário
+$mail->setFrom($_POST["Email"], $_POST["Nome"]);                  // e-mail do remetente
+                  
+$mail->addAddress("higorturetta@hotmail.com");   // e-mail destinatário
 $mail->isHTML(false);                                   // formato do texto de saída
 $mail->Subject     = $_POST["TipoProjeto"];              // assunto (título do e-mail)
 $mail->Body        = $_POST["Descricao"];          // Corpo do e-mail em HTML (destinado ao texto geral)
