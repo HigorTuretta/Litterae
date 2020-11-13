@@ -16,7 +16,7 @@ if ($acao == "Insert") {
     $result = $model->insert($conDb, $data);
 
     if ($result) {
-        $_SESSION["msgSucesso"] = "Pedido incluído com sucesso !";
+        $_SESSION["msgSucesso"] = "Pedido realizado com sucesso. Muito obrigado pela preferência!";
     } else {
         $_SESSION["msgError"] = "Não foi possível incluir o pedido no banco de dados !";
     }
