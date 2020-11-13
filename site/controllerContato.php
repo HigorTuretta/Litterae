@@ -22,7 +22,7 @@ if ($acao == "Insert") {
     }
 ?>
     <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>home";
+        window.location = "<?= SITE_URL ?>contato";
     </script>
 <?php
 } else if ($acao == "Update") {
