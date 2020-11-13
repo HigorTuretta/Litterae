@@ -1,3 +1,7 @@
+<?php
+    require_once 'lib/Formulario.php';
+?>
+
 <section class="Padrao">
     <div class="container" id="contato">
         <h2>Faça seu Orçamento!</h2>
@@ -11,7 +15,9 @@
             <a href="https://www.facebook.com/litterae.arte" target="blank"><i class="fab fa-facebook-square"></i></a>
         </div>
         <hr>
-        <?= Formulario::exibeMensagem() ?>
+        <div>
+            <?= Formulario::exibeMensagem() ?>
+        </div>
         <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
