@@ -1,3 +1,6 @@
+
+import swal from 'sweetalert';
+
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -24,19 +27,25 @@ const navSlide = () => {
 
 // formulario
 
-$(document).ready(function ($) {
-    const $formulario = $("#formulario");
-    $formulario.submit(e => {
-        e.preventDefault();
-
-        Swal.fire({
-            icon: 'success',
-            title: 'Mensagem Enviada!',
-            text: 'Muito obrigado!',
-            footer: '<a href="/">Voltar para home</a>'
-        });
+$(document).ready(function(){
+    $('#formulario').on('submit',function(e) {  //Don't foget to change the id form
+    $.ajax({
+        url:'contato.php', //===PHP 
+        data:$(this).serialize(),
+        type:'POST',
+        success:function(data){
+          console.log(data);
+          //Success Message == 'Title', 'Message body', Last one leave as it is
+          swal("Sucesso!", "Sua mensagem pfoi enviada! Não se preucupe, você será respondido o mais breve possível. Muito obrigado pela preferência!", "success");
+        },
+        error:function(data){
+          //Error Message == 'Title', 'Message body', Last one leave as it is
+          swal("Oops...", "Alguma coisa deu errada! :(", "error");
+        }
+      });
+      e.preventDefault(); 
     });
-});
+  });
 
 
 $('a[href^="#"]').on('click', function (event) {

@@ -18,7 +18,7 @@
         <div>
             <?= Formulario::exibeMensagem() ?>
         </div>
-        <form action="<?= SITE_URL ?>faleConoscoEnvio" enctype="multipart/form-data" method="POST">
+        <form id="formulario" role="form" enctype="multipart/form-data" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="Nome">Nome:</label>

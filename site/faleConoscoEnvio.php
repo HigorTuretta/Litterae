@@ -9,6 +9,11 @@ use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
 require_once 'assets/util/phpmailer/vendor/autoload.php';
+
+$to = 'contatolitterae.arte@gmail.com' . "Litterae - Orçamento";
+$name = $_POST['Nome'];
+$email = $_POST['Email']; 
+
 $TipoProjeto = "";
 
 if ($_POST['TipoProjeto'] == 1 ? $TipoProjeto =  "Parede Personalizada" : ($_POST['TipoProjeto'] == 2 ? $TipoProjeto = "Quadro Personalizado" : ($_POST['TipoProjeto'] == 3 ? $TipoProjeto = "Lettering para publicidade" : $TipoProjeto = "Lettering Geral")));
@@ -27,7 +32,7 @@ $mail->Password     = "hi123456gor";                       // Senha do e-mail de
 $mail->From         = $_POST["Email"];                  // E-mail remetente
 $mail->FromName     = $_POST["Nome"];                   // Nome do Remetente
 
-$mail->addAddress("contatolitterae.arte@gmail.com", "Litterae - Orçamento");    // E-mail Destinatário
+$mail->addAddress($to);    // E-mail Destinatário
 $mail->isHTML(true);                                   // formato do texto de saída
 $mail->Subject     = "Orçamento Solicitado";              // assunto (título do e-mail)
 $mail->Body        = $mensagem;          // Corpo do e-mail em HTML (destinado ao texto geral)
