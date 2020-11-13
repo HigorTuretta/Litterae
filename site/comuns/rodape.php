@@ -15,7 +15,7 @@
                         </div>
                         <div class="col">
                             <span>Contatos:</span><br>
-                            <span><i class="fas fa-envelope"></i> 1soaressara@gmail.com</span><br>
+                            <span><i class="fas fa-envelope"></i> contatolitterae.arte@gmail.com</span><br>
                             <span><a style="color: white; text-decoration: none;" href="https://api.whatsapp.com/send?phone=5532999385459"><i class="fab fa-whatsapp"></i> (32) 99938 5459</a></span>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 <section class="Padrao">
     <div class="container" id="contato">
         <h2>Faça seu Orçamento!</h2>
-        <p>Para solicitar um orçamento ou marcar uma visita, é só preencher o formulário abaixo ou, se preferir, me mandar um e-mail: 1soaressara@gmail.com.
+        <p>Para solicitar um orçamento ou marcar uma visita, é só preencher o formulário abaixo ou, se preferir, me mandar um e-mail: contatolitterae.arte@gmail.com.
             Você também pode clicar no ícone do <a href="https://api.whatsapp.com/send?phone=5532999385459">WhatsApp</a> em sua tela para iniciar uma conversa diretamente conosco! Fique a vontade!</p>
         <small class="text-center">
             Não se esqueça de me acompanhar nas redes sociais, para ficar por dentro de todas as novidades e promoções!
