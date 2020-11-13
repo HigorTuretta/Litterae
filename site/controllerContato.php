@@ -20,6 +20,11 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível incluir o pedido no banco de dados !";
     }
+?>
+    <script language="JavaScript">
+        window.location = "<?= SITE_URL ?>home";
+    </script>
+<?php
 } else if ($acao == "Update") {
 
     $data = array(
@@ -35,11 +40,6 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível alterar o pedido no banco de dados !";
     }
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>home";
-    </script>
-<?php
 } else if ($acao == "Delete") {
 
     $result = $model->delete($conDb, $id);
