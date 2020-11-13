@@ -16,7 +16,7 @@ $dados = $model->lista($conDb);
 <section class="Padrao">
     <div class="container pTitle pb-5 ">
 
-    <?= Formulario::exibeMensagem()?>
+        <?= Formulario::exibeMensagem() ?>
 
         <div class="row">
 

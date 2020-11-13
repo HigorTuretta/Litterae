@@ -1,32 +1,32 @@
 <?php
 
-class Seguranca 
+class Seguranca
 {
 
     /*
      * Verifica se o usuário está logado, caso não esteja será direcionado para a view login
      */
-    
-    static function esta_logado($nivel = 0 )
+
+    static function esta_logado($nivel = 0)
     {
-        
-        if (!isset($_SESSION[ 'userCodigo' ])) {
-            
-            ?>
+
+        if (!isset($_SESSION['userCodigo'])) {
+
+?>
             <script language="JavaScript">
-                window.location="<?= SITE_URL ?>login";
+                window.location = "<?= SITE_URL ?>login";
             </script>
-            <?php            
-            
+            <?php
+
         }
-        
+
         // Verifica o nivel de acesso necessário para entrar na rotina solicitada
-        
+
         if ($nivel != 0) {
-            
+
             if ($_SESSION['userNivel'] == 2 && $nivel == 1) {
-                ?>
-            
+            ?>
+
                 <div class="container">
 
                     <div class="form-group">
@@ -37,18 +37,13 @@ class Seguranca
                             Usuário sem permissão de acesso !
                         </div>
                     </div>
-                    
+
                 </div>
-            
-                <?php
-                
+
+<?php
+
                 exit;
-                
             }
-            
         }
-        
     }
-        
-    
 }

@@ -23,10 +23,11 @@ class modelCategorias
     }
 
     //busca categorias por Status
-    function buscaCategoriaAtivas($conDb){
+    function buscaCategoriaAtivas($conDb)
+    {
         $modelRsc = $conDb->db_select("SELECT * FROM categoria WHERE StatusCategoria = 'A' ORDER BY Descricao");
 
-        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
             return array();
         } else {
             return $conDb->db_busca_dados_all($modelRsc);

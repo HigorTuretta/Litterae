@@ -1,17 +1,17 @@
 <section class="Padrao">
     <div class="container" id="contato">
         <h2>Faça seu Orçamento!</h2>
-        <p>Para solicitar um orçamento ou marcar uma visita, é só preencher o formulário abaixo ou, se preferir, me mandar um e-mail: 1soaressara@gmail.com. 
+        <p>Para solicitar um orçamento ou marcar uma visita, é só preencher o formulário abaixo ou, se preferir, me mandar um e-mail: 1soaressara@gmail.com.
             Você também pode clicar no ícone do <a href="https://api.whatsapp.com/send?phone=5532999385459">WhatsApp</a> em sua tela para iniciar uma conversa diretamente conosco! Fique a vontade!</p>
         <small class="text-center">
-            Não se esqueça de me acompanhar nas redes sociais, para ficar por dentro de todas as novidades e promoções!             
+            Não se esqueça de me acompanhar nas redes sociais, para ficar por dentro de todas as novidades e promoções!
         </small>
-        <div class="text-left contato-links"> 
+        <div class="text-left contato-links">
             <a href="https://www.instagram.com/litterae.arte/" target="blank"><i class="fab fa-instagram-square"></i></a>
             <a href="https://www.facebook.com/litterae.arte" target="blank"><i class="fab fa-facebook-square"></i></a>
         </div>
         <hr>
-        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data"  method="POST">
+        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="Nome">Nome:</label>

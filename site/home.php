@@ -126,7 +126,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
     <!-- CONTATO -->
     <div class="container" id="contato">
         <h2>Faça seu Orçamento!</h2>
-        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data" method="POST" id="formulario"> 
+        <form action="<?= SITE_URL ?>controllerContato/Insert" enctype="multipart/form-data" method="POST" id="formulario">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="Nome">Nome:</label>

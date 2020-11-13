@@ -1,4 +1,5 @@
 /* imports */
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {
     font-family: 'Mattahary';
@@ -75,6 +76,7 @@ h4 {
 .header_area nav {
     z-index: 20;
 }
+
 nav {
     transition: all 0.3s;
 }
@@ -104,7 +106,7 @@ nav {
     margin-top: 20px;
 }
 
-.logo img{
+.logo img {
     width: 170px;
     height: 55px;
 }
@@ -219,25 +221,27 @@ nav {
     width: 12px!important;
     height: 12px!important;
     transition: all 0.3s!important;
-
 }
-.carousel-indicators li:hover{
+
+.carousel-indicators li:hover {
     transform: scale(1.5);
 }
-.carroca:hover .carousel-indicators li{
-    background-color:darkblue;
+
+.carroca:hover .carousel-indicators li {
+    background-color: darkblue;
 }
+
 .carroca {
-    margin-top: -30px; 
-    margin-bottom: 50px;  
+    margin-top: -30px;
+    margin-bottom: 50px;
     margin-left: 30px;
-    margin-right: 30px; 
-    transition: all 0.3s;   
+    margin-right: 30px;
+    transition: all 0.3s;
 }
-.carroca img {   
-     
+
+.carroca img {
     width: 1200px;
-    height: 600px;   
+    height: 600px;
 }
 
 @media screen and (max-width: 1046px) {
@@ -264,6 +268,7 @@ nav {
 /* SLIDES END */
 
 /* SOBRE BEGIN */
+
 .text-sobre {
     font-family: "beyond_the_mountains";
     font-size: 30px;
@@ -291,8 +296,8 @@ nav {
     margin: 30px;
 }
 
-@media screen and (max-width: 500px){
-    .container-personalized{
+@media screen and (max-width: 500px) {
+    .container-personalized {
         margin: 0;
     }
 }
@@ -493,7 +498,8 @@ form input, select, textarea {
     margin-bottom: 20px;
     margin-top: 40px;
 }
-#contato h2 img{
+
+#contato h2 img {
     width: 300px;
     height: 50px;
 }
@@ -615,9 +621,11 @@ form input, select, textarea {
 .form-files label {
     margin-left: 20px;
 }
-.form-files input{
+
+.form-files input {
     margin-left: 20px;
 }
+
 .form-files img {
     max-width: 150px;
     max-height: 200px;
@@ -659,29 +667,27 @@ form input, select, textarea {
 
 /* SAIBA MAIS END */
 
-
 /* SOBRE NOS BEGIN */
 
 .sobreNos-section {
     margin-top: 20px;
 }
+
 .sobreNos-title {
     font-family: 'beyond_the_mountains';
     text-align: center;
     margin-bottom: 50px;
-
 }
 
-.sobreNos-description img{
+.sobreNos-description img {
     max-width: 250px;
     max-height: 350px;
-    border: 1px solid black;
     margin-bottom: 20px;
     margin-right: 20px;
 }
 
 /* SOBRE NOS END */
 
-.control-height{
+.control-height {
     padding-bottom: 200px;
 }

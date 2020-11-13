@@ -139,7 +139,7 @@ $dados = $model->buscaUsuarioID($conDb, $id);
 
                     <div class="controls">
 
-                        <input type="password" class="form-control" id="Senha" name="Senha" placeholder="Informe Senha" maxlength="100"/>
+                        <input type="password" class="form-control" id="Senha" name="Senha" placeholder="Informe Senha" maxlength="100" />
 
                     </div>
 

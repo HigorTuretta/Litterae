@@ -1,9 +1,9 @@
 <?php
 require_once "lib/Seguranca.php";
-    
+
 // Verifica se o usuário está logado para continuar
 
-Seguranca::esta_logado( 1 );
+Seguranca::esta_logado(1);
 
 //
 
@@ -83,7 +83,7 @@ $descricao = Formulario::set_value("Descricao");
                 </textarea>
                 </div>
             </div>
-            <h6 class="text-danger">Lembre-se de Marcar como  Lido/Concluído!</h6>
+            <h6 class="text-danger">Lembre-se de Marcar como Lido/Concluído!</h6>
             <a class="btn btn-danger" href="<?= SITE_URL ?>listaContato">Voltar</a>
 
             <button name="btEnviar" id="btEnviar" class="btn btn-success" type="submit">Gravar</button>

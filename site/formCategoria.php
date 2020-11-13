@@ -1,9 +1,9 @@
 <?php
 require_once "lib/Seguranca.php";
-    
+
 // Verifica se o usuário está logado para continuar
 
-Seguranca::esta_logado( 1 );
+Seguranca::esta_logado(1);
 
 //
 
@@ -38,11 +38,11 @@ $dados = $model->buscaCodCategoria($conDb, $id);
                 <div class="form-group col-md-2">
                     <label for="codCategoria">Código</label>
                     <input type="number" readonly="readonly" class="form-control" name="codCategoria" id="codCategoria" value="<?= Formulario::set_value("codCategoria", 0) ?>">
-                </div> 
+                </div>
                 <div class="form-group col-md-5">
                     <label for="descricao">Descrição</label>
                     <input type="text" class="form-control" name="descricao" id="descricao" value="<?= Formulario::set_value("Descricao", "") ?>">
-                </div>                          
+                </div>
                 <div class="form-group col-md-5">
                     <label for="statusCategoria">Status da Categoria</label>
                     <select required name="statusCategoria" id="statusCategoria" class="form-control">
@@ -51,7 +51,7 @@ $dados = $model->buscaCodCategoria($conDb, $id);
                         <option <?= (Formulario::set_value("StatusCategoria") == "I"  ? 'selected="selected"' : "") ?> value="I">Inativa</option>
                     </select>
                 </div>
-            </div>     
+            </div>
 
             <a class="btn btn-danger" href="<?= SITE_URL ?>listaCategoria">Voltar</a>
             <?php
@@ -61,6 +61,6 @@ $dados = $model->buscaCodCategoria($conDb, $id);
             <?php
             }
             ?>
-        </form>        
+        </form>
     </div>
 </section>

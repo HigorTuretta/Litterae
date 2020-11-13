@@ -21,7 +21,8 @@ class modelContatos
             return $aRet[0];
         }
     }
-    function buscaNovosContatos($conDb){
+    function buscaNovosContatos($conDb)
+    {
         $modelRsc = $conDb->db_select("SELECT COUNT(*) AS NovosRegistros FROM contato WHERE StatusPedido = '1' ");
 
         if ($conDb->db_num_linhas($modelRsc) == 0) {
@@ -31,7 +32,7 @@ class modelContatos
         }
     }
 
-     /*
+    /*
      * Busca contatos cadastrados na base de dados
      */
 
@@ -67,7 +68,8 @@ class modelContatos
     }
 
     // função para marcar como lido
-    function marcarLido($conDb, $codContato){
+    function marcarLido($conDb, $codContato)
+    {
         $rs = $conDb->db_update(
             "UPDATE contato
                  SET StatusPedido = '2' 
@@ -83,7 +85,8 @@ class modelContatos
     }
 
     // função para desmarcar como lido
-    function desmarcarLido($conDb, $codContato){
+    function desmarcarLido($conDb, $codContato)
+    {
         $rs = $conDb->db_update(
             "UPDATE contato
                  SET StatusPedido = '1' 
@@ -99,7 +102,8 @@ class modelContatos
     }
 
     // função para desmarcar como lido
-    function marcarConcluido($conDb, $codContato){
+    function marcarConcluido($conDb, $codContato)
+    {
         $rs = $conDb->db_update(
             "UPDATE contato
                  SET StatusPedido = '3' 
@@ -114,7 +118,8 @@ class modelContatos
         }
     }
     // função para desmarcar como lido
-    function desmarcarConcluido($conDb, $codContato){
+    function desmarcarConcluido($conDb, $codContato)
+    {
         $rs = $conDb->db_update(
             "UPDATE contato
                  SET StatusPedido = '2' 
@@ -148,9 +153,9 @@ class modelContatos
         } else {
             return false;
         }
-    } 
-    
-    
+    }
+
+
     /*
      * Altera os dados de uma categoria no banco
      */

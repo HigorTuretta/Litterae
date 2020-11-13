@@ -107,10 +107,11 @@ class Formulario
         return $cRet;
     }
 
-    static function setDataTable($idTable){
+    static function setDataTable($idTable)
+    {
         return '<script type="text/javascript">
         $(document).ready( () => {
-            $("#'. $idTable .'").DataTable({
+            $("#' . $idTable . '").DataTable({
     
                 language: 
                         {
@@ -157,4 +158,3 @@ class Formulario
     </script>';
     }
 }
-

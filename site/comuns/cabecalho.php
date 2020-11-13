@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="<?= SITE_URL . "assets/css/style.css?v=1.48" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/css/bootstrap.min.css" ?>">
     <link rel="stylesheet" href="<?= SITE_URL . "assets/js/package/dist/sweetalert2.min.css" ?>">
-    <link rel="stylesheet" href="<?= SITE_URL . "assets/util/dataTables/datatables.min.css"?>">
-    
+    <link rel="stylesheet" href="<?= SITE_URL . "assets/util/dataTables/datatables.min.css" ?>">
+
     <script src="<?= SITE_URL . "assets/js/jquery-3.5.1.min.js" ?>"></script>
-    <script src="<?= SITE_URL . "assets/util/dataTables/datatables.min.js"?>"></script>
- 
+    <script src="<?= SITE_URL . "assets/util/dataTables/datatables.min.js" ?>"></script>
+
     <link rel="shortcut icon" href="<?= SITE_URL . "assets/images/icon.png" ?>" type="image/x-icon">
     <title>Litterae Arte</title>
 
@@ -26,7 +26,7 @@
             <nav class="navbar-personalized-fixed" id="navbar">
                 <div class="logo">
                     <a href="<?= SITE_URL ?>home">
-                        <img src="<?=SITE_URL . "assets/images/Logo.png"?>">
+                        <img src="<?= SITE_URL . "assets/images/Logo.png" ?>">
                     </a>
                 </div>
 

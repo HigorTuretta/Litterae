@@ -48,7 +48,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
                         <a href="https://www.facebook.com/litterae.arte" target="blank">Facebook</a>.</span>
                 </div>
                 <div class="col-lg mb-4">
-                <p class="text-sobre"><img src="<?= SITE_URL . "assets/images/servicos.png" ?>" alt=""></p>
+                    <p class="text-sobre"><img src="<?= SITE_URL . "assets/images/servicos.png" ?>" alt=""></p>
                     <ul class="list-unstyled">
                         <li>• Paredes Personalizadas</li>
                         <li>• Placas e Quadros personalizados</li>
@@ -56,7 +56,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
                     </ul>
                 </div>
                 <div class="col-lg mb-5">
-                <p class="text-sobre"><img src="<?= SITE_URL . "assets/images/contatos.png" ?>" alt=""></p>
+                    <p class="text-sobre"><img src="<?= SITE_URL . "assets/images/contatos.png" ?>" alt=""></p>
                     <span>Se quiser fazer um comentário, pergunta ou pedir um orçamento, <a href="#contato">entre em
                             contato.</a> Será um prazer te atender!</span>
                 </div>

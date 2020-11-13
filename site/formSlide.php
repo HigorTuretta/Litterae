@@ -1,9 +1,9 @@
 <?php
 require_once "lib/Seguranca.php";
-    
+
 // Verifica se o usuário está logado para continuar
 
-Seguranca::esta_logado( 1 );
+Seguranca::esta_logado(1);
 
 //
 
@@ -38,7 +38,7 @@ $dados = $model->buscaCodSlides($conDb, $id);
                 <div class="form-group col-md-1">
                     <label for="codSlide">Código</label>
                     <input type="number" readonly="readonly" class="form-control" name="codSlide" id="codSlide" value="<?= Formulario::set_value("codSlide", 0) ?>">
-                </div>                           
+                </div>
                 <div class="form-group col-md-2">
                     <label for="StatusSlide">Status do Slide</label>
                     <select required name="StatusSlide" id="StatusSlide" class="form-control">
@@ -47,7 +47,7 @@ $dados = $model->buscaCodSlides($conDb, $id);
                         <option <?= (Formulario::set_value("StatusSlide") == "D"  ? 'selected="selected"' : "") ?> value="D">Desabilitada</option>
                     </select>
                 </div>
-            </div>          
+            </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
                     <label for="Imagem">Imagem (1200x600): </label>
@@ -57,7 +57,7 @@ $dados = $model->buscaCodSlides($conDb, $id);
                     <input type="hidden" name="ExcluirImagem" value="<?= trim(Formulario::set_value("Imagem", "")) ?>">
                     <img class="form-images" name="" src="<?= SITE_URL . "assets/images/slides/" . Formulario::set_value("Imagem", "") ?>" alt="" srcset="">
                 </div>
-            </div>           
+            </div>
 
             <a class="btn btn-danger" href="<?= SITE_URL ?>listaSlides">Voltar</a>
             <?php
@@ -67,6 +67,6 @@ $dados = $model->buscaCodSlides($conDb, $id);
             <?php
             }
             ?>
-        </form>        
+        </form>
     </div>
 </section>

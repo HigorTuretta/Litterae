@@ -20,13 +20,6 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível incluir o pedido no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>home";
-    </script>
-<?php
-
 } else if ($acao == "Update") {
 
     $data = array(
@@ -42,13 +35,6 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível alterar o pedido no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaContato";
-    </script>
-<?php
-
 } else if ($acao == "Delete") {
 
     $result = $model->delete($conDb, $id);
@@ -58,13 +44,6 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível excluir o pedido no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaContato";
-    </script>
-<?php
-
 } else if ($acao == "Read-Mark") {
 
     $data = array(
@@ -78,13 +57,7 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Houve um problema ao marcar como lido!";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaContato";
-    </script>
-<?php
-}else if ($acao == "UnRead-Mark") {
+} else if ($acao == "UnRead-Mark") {
 
     $data = array(
         $id
@@ -97,13 +70,7 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Houve um problema ao desmarcar como lido!";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaContato";
-    </script>
-<?php
-}else if ($acao == "Completed") {
+} else if ($acao == "Completed") {
 
     $data = array(
         $id
@@ -116,13 +83,7 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Houve um problema ao marcar como concluído!";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaContato";
-    </script>
-<?php
-}else if ($acao == "UnCompleted") {
+} else if ($acao == "UnCompleted") {
 
     $data = array(
         $id
@@ -135,15 +96,9 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Houve um problema ao desmarcar como concluído!";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaContato";
-    </script>
-<?php
 }
 ?>
 <script language="JavaScript">
-    window.location = "<?= SITE_URL ?> listaContato";
+    window.location = "<?= SITE_URL ?>listaContato";
 </script>
 <?php

@@ -275,22 +275,22 @@ class modelPortifolio
 class modelSobreNos
 {
 
-     // busca pelo codigo 
-     function buscaCodSobre($conDb, $codSobre)
-     {
- 
-         $modelRsc = $conDb->db_select(
-             "SELECT * FROM sobrenos WHERE codSobre = ?",
-             array($codSobre)
-         );
- 
-         if ($conDb->db_num_linhas($modelRsc) == 0) {
-             return array();
-         } else {
-             $aRet = $conDb->db_busca_array_all($modelRsc);
-             return $aRet[0];
-         }
-     }
+    // busca pelo codigo 
+    function buscaCodSobre($conDb, $codSobre)
+    {
+
+        $modelRsc = $conDb->db_select(
+            "SELECT * FROM sobrenos WHERE codSobre = ?",
+            array($codSobre)
+        );
+
+        if ($conDb->db_num_linhas($modelRsc) == 0) {
+            return array();
+        } else {
+            $aRet = $conDb->db_busca_array_all($modelRsc);
+            return $aRet[0];
+        }
+    }
 
     /*
      * Busca dados da tabela sobrenos no banco 

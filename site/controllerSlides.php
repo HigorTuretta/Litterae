@@ -9,30 +9,30 @@ $arUser = $model->buscaCodSlides($conDb, $_POST["codSlide"]);
 $pasta = 'assets/images/slides/';
 
 //lista de tipos de arquivos permitidos
- $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
+$tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
 
-  //tamanho máximo (em bytes)
-  $tamanhoPermitido = 1024*1024*100; //5mb
+//tamanho máximo (em bytes)
+$tamanhoPermitido = 1024 * 1024 * 100; //5mb
 
-  //nome original do arquivo no computador do usuario
-  $Imagem = $_FILES['Imagem']['name'];
+//nome original do arquivo no computador do usuario
+$Imagem = $_FILES['Imagem']['name'];
 
-  //o tipo do arquivo
-  $ImagemType = $_FILES['Imagem']['type'];
+//o tipo do arquivo
+$ImagemType = $_FILES['Imagem']['type'];
 
-  //o tamanho do arquivo
-  $ImagemSize = $_FILES['Imagem']['size'];
+//o tamanho do arquivo
+$ImagemSize = $_FILES['Imagem']['size'];
 
-  // o nome temporario do arquivo
-  $ImagemTemp = $_FILES['Imagem']['tmp_name'];
+// o nome temporario do arquivo
+$ImagemTemp = $_FILES['Imagem']['tmp_name'];
 
-  //codigos de possiveis erros na imagem
-  $ImagemError = $_FILES['Imagem']['error'];
+//codigos de possiveis erros na imagem
+$ImagemError = $_FILES['Imagem']['error'];
 
 
 if ($acao == "Insert") {
-    
-    if (trim($arUser['Imagem']) != $_FILES['Imagem']['name'] and $_FILES['Imagem']['name'] != "") {      
+
+    if (trim($arUser['Imagem']) != $_FILES['Imagem']['name'] and $_FILES['Imagem']['name'] != "") {
 
         $upload = false;
 
@@ -50,11 +50,11 @@ if ($acao == "Insert") {
                 }
             }
         }
-    }  
+    }
 
     if ($upload) {
 
-        $data = array(           
+        $data = array(
             $Imagem,
             $_POST['StatusSlide']
         );
@@ -67,40 +67,34 @@ if ($acao == "Insert") {
             $_SESSION["msgError"] = "Não foi possível incluir o Slide no banco de dados !";
         }
     }
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaSlides";
-    </script>
-<?php
-
 } else if ($acao == "Update") {
 
-    $Imagem = trim($arUser['Imagem']); 
+    $Imagem = trim($arUser['Imagem']);
     $upload = true;
 
     //procedimendo para a imagem de Capa
-    if (trim($arUser['Imagem']) != $_FILES['Imagem']['name'] and $_FILES['Imagem']['name'] != "") {        
+    if (trim($arUser['Imagem']) != $_FILES['Imagem']['name'] and $_FILES['Imagem']['name'] != "") {
 
-       //lista de tipos de arquivos permitidos
-       $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
+        //lista de tipos de arquivos permitidos
+        $tiposPermitidos =  array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
 
-       //tamanho máximo (em bytes)
-       $tamanhoPermitido = 1024*1024*100; //5mb
+        //tamanho máximo (em bytes)
+        $tamanhoPermitido = 1024 * 1024 * 100; //5mb
 
-       //nome original do arquivo no computador do usuario
-       $Imagem = $_FILES['Imagem']['name'];
+        //nome original do arquivo no computador do usuario
+        $Imagem = $_FILES['Imagem']['name'];
 
-       //o tipo do arquivo
-       $ImagemType = $_FILES['Imagem']['type'];
+        //o tipo do arquivo
+        $ImagemType = $_FILES['Imagem']['type'];
 
-       //o tamanho do arquivo
-       $ImagemSize = $_FILES['Imagem']['size'];
+        //o tamanho do arquivo
+        $ImagemSize = $_FILES['Imagem']['size'];
 
-       // o nome temporario do arquivo
-       $ImagemTemp = $_FILES['Imagem']['tmp_name'];
+        // o nome temporario do arquivo
+        $ImagemTemp = $_FILES['Imagem']['tmp_name'];
 
-       //codigos de possiveis erros na imagem
-       $ImagemError = $_FILES['Imagem']['error'];
+        //codigos de possiveis erros na imagem
+        $ImagemError = $_FILES['Imagem']['error'];
 
         if ($ImagemError === 0) {
 
@@ -126,9 +120,9 @@ if ($acao == "Insert") {
     if ($upload) {
 
 
-        $data = array(           
+        $data = array(
             $Imagem,
-            $_POST["StatusSlide"],          
+            $_POST["StatusSlide"],
             $_POST["codSlide"]
 
         );
@@ -142,12 +136,6 @@ if ($acao == "Insert") {
             $_SESSION["msgError"] = "Não foi possível alterar o Slide no banco de dados !";
         }
     }
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaSlides";
-    </script>
-<?php
-
 } else if ($acao == "Delete") {
 
     $result = $model->delete($conDb, $_POST['codSlide']);
@@ -156,21 +144,14 @@ if ($acao == "Insert") {
         $_SESSION["msgSucesso"] = "Slide excluído com sucesso !";
 
         //exclui as imagens no servidor
-        unlink("assets/images/slides/" . trim($_POST["ExcluirImagem"]));       
+        unlink("assets/images/slides/" . trim($_POST["ExcluirImagem"]));
     } else {
         $_SESSION["msgError"] = "Não foi possível excluir o Slide no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaSlides";
-    </script>
-<?php
-
 }
 
 ?>
 <script language="JavaScript">
-    window.location = "<?= SITE_URL ?> listaSlides";
+    window.location = "<?= SITE_URL ?>listaSlides";
 </script>
 <?php

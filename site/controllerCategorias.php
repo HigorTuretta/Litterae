@@ -19,13 +19,6 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível incluir a Categoria no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaCategoria";
-    </script>
-<?php
-
 } else if ($acao == "Update") {
 
     $data = array(
@@ -42,13 +35,6 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível alterar a categoria no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaCategoria";
-    </script>
-<?php
-
 } else if ($acao == "Delete") {
 
     $result = $model->delete($conDb, $_POST['codCategoria']);
@@ -58,17 +44,10 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível excluir a categoria no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaCategoria";
-    </script>
-<?php
-
 }
 
 ?>
 <script language="JavaScript">
-    window.location = "<?= SITE_URL ?> listaCategoria";
+    window.location = "<?= SITE_URL ?>listaCategoria";
 </script>
 <?php

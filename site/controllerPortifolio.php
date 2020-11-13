@@ -72,9 +72,9 @@ if ($acao != "Delete") {
 
 if ($acao == "Insert") {
 
-    if (($uploadCapa == true) && ($upload1 == true) && ($upload2 == true) && ($upload3 == true) && ($upload4 == true) ) {
+    if (($uploadCapa == true) && ($upload1 == true) && ($upload2 == true) && ($upload3 == true) && ($upload4 == true)) {
 
-        
+
         $uploadCapa = move_uploaded_file($nomeTmpImgCapa, $dir . $nomeImgCapa);
         // Verfica se o arquivo foi movido com sucesso
         if (!$uploadCapa) {
@@ -121,12 +121,6 @@ if ($acao == "Insert") {
         } else {
             $_SESSION["msgError"] = "Não foi possível incluir a categoria no banco de dados !";
         }
-
-?>
-        <script language="JavaScript">
-            window.location = "<?= SITE_URL ?>listaPortifolio";
-        </script>
-    <?php
     }
 } else if ($acao == "Update") {
 
@@ -243,12 +237,6 @@ if ($acao == "Insert") {
             $_SESSION["msgError"] = "Não foi possível alterar a postagem no banco de dados !";
         }
     }
-    ?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaPortifolio";
-    </script>
-<?php
-
 } else if ($acao == "Delete") {
 
     $result = $model->delete($conDb, $_POST['CodPublicacao']);
@@ -265,13 +253,6 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível excluir a postagem no banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaPortifolio";
-    </script>
-<?php
-
 }
 
 ?>

@@ -51,8 +51,8 @@ $descricao = Formulario::set_value("Descricao");
                 <div class="form-group col-md-5">
                     <label for="dataPublicacao">Data de Publicação</label>
                     <input type="text" readonly class="form-control" name="dataPublicacao" id="dataPublicacao" value="<?= Formulario::set_value("dataPublicacao", "") ?>">
-                </div>                
-            </div> 
+                </div>
+            </div>
             <div class="form-row form-files">
                 <div class="form-group col-md-6">
                     <label for="Imagem">Imagem</label>
@@ -62,7 +62,7 @@ $descricao = Formulario::set_value("Descricao");
                     <input type="hidden" name="ExcluirImagem" value="<?= trim(Formulario::set_value("Imagem", "")) ?>">
                     <img class="form-images" name="" src="<?= SITE_URL . "assets/images/" . Formulario::set_value("Imagem", "") ?>">
                 </div>
-            </div>             
+            </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="descricao">Descrição</label>
@@ -71,7 +71,7 @@ $descricao = Formulario::set_value("Descricao");
                 </textarea>
                 </div>
             </div>
-           
+
 
             <a class="btn btn-danger" href="<?= SITE_URL ?>listaSobreNos">Voltar</a>
             <?php

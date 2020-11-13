@@ -29,13 +29,13 @@ $(document).ready(function ($) {
     $formulario.submit(e => {
         e.preventDefault();
 
-            Swal.fire({
-                icon: 'success',
-                title: 'Mensagem Enviada!',
-                text: 'Muito obrigado!',
-                footer: '<a href="/">Voltar para home</a>'
-            });
+        Swal.fire({
+            icon: 'success',
+            title: 'Mensagem Enviada!',
+            text: 'Muito obrigado!',
+            footer: '<a href="/">Voltar para home</a>'
         });
+    });
 });
 
 

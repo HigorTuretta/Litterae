@@ -66,12 +66,6 @@ if ($acao == "Insert") {
             $_SESSION["msgError"] = "Não foi possível incluir as informações no banco de dados !";
         }
     }
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaSobreNos";
-    </script>
-<?php
-
 } else if ($acao == "Update") {
 
     $Imagem = trim($arUser['Imagem']);
@@ -145,12 +139,6 @@ if ($acao == "Insert") {
             $_SESSION["msgError"] = "Não foi possível alterar as informações no banco de dados !";
         }
     }
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaSobreNos";
-    </script>
-<?php
-
 } else if ($acao == "Delete") {
 
     $result = $model->delete($conDb, $_POST['codSobre']);
@@ -163,17 +151,12 @@ if ($acao == "Insert") {
     } else {
         $_SESSION["msgError"] = "Não foi possível excluir as informações do banco de dados !";
     }
-
-?>
-    <script language="JavaScript">
-        window.location = "<?= SITE_URL ?>listaSobreNos";
-    </script>
-<?php
-
 }
 
 ?>
 <script language="JavaScript">
-    window.location = "<?= SITE_URL ?> listaSobreNos";
+    window.location = "<?= SITE_URL ?>listaSobreNos";
 </script>
 <?php
+
+?>
