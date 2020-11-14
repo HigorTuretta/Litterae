@@ -31,7 +31,6 @@
         <script src="https://kit.fontawesome.com/243351fe15.js" crossorigin="anonymous"></script>
         <script src="<?= SITE_URL . "assets/js/bootstrap.min.js" ?>"></script>
 
-        
         </div>
         </body>
 
