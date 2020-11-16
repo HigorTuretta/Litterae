@@ -75,9 +75,9 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
     <!-- cards -->
     <div class="portifolio-cards">
         <div class="container-personalized">
-                <div class="pTitle-home mb-4">
-                    <h2 class="text-center">Alguns dos meus Trabalhos</h2>
-                </div>
+            <div class="pTitle-home mb-4">
+                <h2 class="text-center">Alguns dos meus Trabalhos</h2>
+            </div>
             <?php
             if ($dados) {
 
@@ -134,3 +134,63 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
     <!-- WPP LINK -->
     <!-- CONTATO END -->
 </section>
+
+<script>
+    // JAVASCRIPT PARA O FUNCIONAMENTO DO SLIDER CLICANDO
+    $(window).on("load", function() {
+        var slides = document.querySelectorAll('.slide');
+        var btns = document.querySelectorAll('.navigation-button');
+
+        let currentslide = 1;
+
+        var manualNav = function(manual) {
+
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+
+                btns.forEach((btn) => {
+                    btn.classList.remove('active');
+                });
+            });
+
+            slides[manual].classList.add('active');
+            btns[manual].classList.add('active');
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener('click', () => {
+                manualNav(i);
+                currentslide = i;
+            })
+        })
+
+        // JAVASCRIPT PARA O FUNCIONAMENTO DO SLIDER AUTOMATICAMENTE
+        var repeat = function(activeClass) {
+            let active = document.getElementsByClassName('active');
+            let i = 1;
+
+            var repeater = () => {
+                setTimeout(() => {
+                    [...active].forEach((activeSlide) => {
+                        activeSlide.classList.remove('active');
+                    });
+
+                    slides[i].classList.add('active');
+                    btns[i].classList.add('active');
+                    i++;
+
+                    if (slides.length == i) {
+                        i = 0
+                    }
+
+                    if (i >= slides.length) {
+                        return;
+                    }
+                    repeater();
+                }, 5000);
+            }
+            repeater();
+        }
+        repeat();
+    });
+</script>
