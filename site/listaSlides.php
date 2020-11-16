@@ -32,10 +32,16 @@ $dados = $model->lista($conDb);
 
             <div class="col-1">
 
-                <a href="<?= SITE_URL . "formSlide/novo/0" ?>" title="Novo">
-                    <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
-                </a>
-
+                <?php
+                if (sizeof($dados) >= 3) {
+                } else {
+                ?>
+                    <a href="<?= SITE_URL . "formSlide/novo/0" ?>" title="Novo">
+                        <i style="font-size: 20px; color: green; margin-top: 10px;" class="far fa-plus-square"></i>
+                    </a>
+                <?php
+                }
+                ?>
             </div>
             <div class="col-1 mt-3 mb-3">
                 <a href="<?= SITE_URL ?>areaAdministrativa" class="btn btn-danger">Voltar</a>

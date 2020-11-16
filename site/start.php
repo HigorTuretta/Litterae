@@ -10,29 +10,34 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
 ?>
 <!-- SLIDE BEGIN -->
 <section class="Padrao ">
-    <div class="carroca ">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner center-block">
+    <div class="slider-area">
+        <div class="img-slider">
+            <?php
+            if ($slider) {
+
+                foreach ($slider as $key => $value) {
+            ?>
+                    <div class="slide  <?= $key === 0 ? "active" : "" ?>">
+                        <img src="<?= SITE_URL . 'assets/images/slides/' . $value->Imagem ?>" class="d-block mx-auto " alt="...">
+                    </div>
+            <?php
+                }
+            }
+            ?>
+            <div class="navigation">
+
                 <?php
                 if ($slider) {
 
                     foreach ($slider as $key => $value) {
                 ?>
-                        <div class="carousel-item  <?= $key === 0 ? "active" : "" ?>">
-                            <img src="<?= SITE_URL . 'assets/images/slides/' . $value->Imagem ?>" class="d-block mx-auto " alt="...">
-                        </div>
+                        <div class="navigation-button <?= $key === 0 ? "active" : "" ?>"></div>
                 <?php
                     }
                 }
                 ?>
             </div>
         </div>
-
     </div>
     <!-- SLIDE END -->
     <div class="container">
@@ -40,7 +45,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
         <div>
             <div class="row text-center">
                 <div class="col-lg mb-4">
-                    <p class="text-sobre"><img src="<?= SITE_URL . "assets/images/quemSou.png" ?>" alt=""></p>
+                    <p class="text-sobre">Quem sou?</p>
                     <span class="text-left">Olá, meu nome é Sara. Sou artista de lettering,
                         fiz curso de pintura e hoje juntei minha experiência com a arte de desenhar letras.
                         Compartilho meu trabalho nesse blog, no universo do
@@ -48,7 +53,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
                         <a href="https://www.facebook.com/litterae.arte" target="blank">Facebook</a>.</span>
                 </div>
                 <div class="col-lg mb-4">
-                    <p class="text-sobre"><img src="<?= SITE_URL . "assets/images/servicos.png" ?>" alt=""></p>
+                    <p class="text-sobre">Serviços</p>
                     <ul class="list-unstyled">
                         <li>• Paredes Personalizadas</li>
                         <li>• Placas e Quadros personalizados</li>
@@ -56,8 +61,8 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
                     </ul>
                 </div>
                 <div class="col-lg mb-5">
-                    <p class="text-sobre"><img src="<?= SITE_URL . "assets/images/contatos.png" ?>" alt=""></p>
-                    <span>Se quiser fazer um comentário, pergunta ou pedir um orçamento, <a href="#contato">entre em
+                    <p class="text-sobre">Contatos</p>
+                    <span>Se quiser fazer um comentário, pergunta ou pedir um orçamento, <a href="<?= SITE_URL ?>contato">entre em
                             contato.</a> Será um prazer te atender!</span>
                 </div>
             </div>
@@ -122,7 +127,6 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
     </div>
     <hr class="Linha container">
     <!-- cards end -->
-   
 
     <!-- WPP LINK  -->
     <a class="whatsapp" href="https://api.whatsapp.com/send?phone=5532999385459" target="blank"><i class="fab fa-whatsapp"></i></a>

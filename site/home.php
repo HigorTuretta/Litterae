@@ -10,29 +10,34 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
 ?>
 <!-- SLIDE BEGIN -->
 <section class="Padrao ">
-    <div class="carroca ">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner center-block">
+    <div class="slider-area">
+        <div class="img-slider">
+            <?php
+            if ($slider) {
+
+                foreach ($slider as $key => $value) {
+            ?>
+                    <div class="slide  <?= $key === 0 ? "active" : "" ?>">
+                        <img src="<?= SITE_URL . 'assets/images/slides/' . $value->Imagem ?>" class="d-block mx-auto " alt="...">
+                    </div>
+            <?php
+                }
+            }
+            ?>
+            <div class="navigation">
+
                 <?php
                 if ($slider) {
 
                     foreach ($slider as $key => $value) {
                 ?>
-                        <div class="carousel-item  <?= $key === 0 ? "active" : "" ?>">
-                            <img src="<?= SITE_URL . 'assets/images/slides/' . $value->Imagem ?>" class="d-block mx-auto " alt="...">
-                        </div>
+                        <div class="navigation-button <?= $key === 0 ? "active" : "" ?>"></div>
                 <?php
                     }
                 }
                 ?>
             </div>
         </div>
-
     </div>
     <!-- SLIDE END -->
     <div class="container">
@@ -57,7 +62,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
                 </div>
                 <div class="col-lg mb-5">
                     <p class="text-sobre">Contatos</p>
-                    <span>Se quiser fazer um comentário, pergunta ou pedir um orçamento, <a href="#contato">entre em
+                    <span>Se quiser fazer um comentário, pergunta ou pedir um orçamento, <a href="<?= SITE_URL ?>contato">entre em
                             contato.</a> Será um prazer te atender!</span>
                 </div>
             </div>
@@ -70,7 +75,9 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
     <!-- cards -->
     <div class="portifolio-cards">
         <div class="container-personalized">
-
+                <div class="pTitle-home mb-4">
+                    <h2 class="text-center">Alguns dos meus Trabalhos</h2>
+                </div>
             <?php
             if ($dados) {
 
@@ -120,9 +127,8 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
             </div>
         </a>
     </div>
-    <hr class="Linha container">
     <!-- cards end -->
-   
+
     <!-- WPP LINK  -->
     <a class="whatsapp" href="https://api.whatsapp.com/send?phone=5532999385459" target="blank"><i class="fab fa-whatsapp"></i></a>
     <!-- WPP LINK -->
