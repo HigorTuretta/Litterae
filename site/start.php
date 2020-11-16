@@ -118,7 +118,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
                         </div>
         </div>
     </div>
-    <div class="mb-5 btn-portifolio">
+    <div class="btn-portifolio">
         <a href="<?= SITE_URL ?>portifolio">
             <div class="personalized-button-back">
                 <div class="personalized-button-front">
