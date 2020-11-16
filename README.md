@@ -23,8 +23,8 @@ A ídeia era ser algo simples, que ela pudesse gerenciar sozinha com uma área a
 - [ ] Dominar o mundo!
 
 
-[Prévia da Área Administrativa simples do site.](preview.gif)
-
+![](preview.gif)
+>Prévia da Área Administrativa simples do site.<br><br>
 
 
 
