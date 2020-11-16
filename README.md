@@ -9,7 +9,11 @@ A ídeia era ser algo simples, que ela pudesse gerenciar sozinha com uma área a
 
 
 ![](preview.gif)
+>Prévia da Área Administrativa simples do site.
 
+
+
+Tudo está quase em ordem, falta só dominar o mundo!
 >O site está totalmente funcional e responsivo, mas ainda não é um trabalho finalizado.
 
 
