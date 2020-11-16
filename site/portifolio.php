@@ -28,7 +28,7 @@ $dados = $model->listaHabilitados($conDb);
                         ?>
 
                         <div class="image">
-                            <img src="assets/images/blog/<?= $value->ImgCapa ?>" alt="<?= $value->ImgCapa ?>">
+                            <img class="img-fluid" src="assets/images/blog/<?= $value->ImgCapa ?>" alt="<?= $value->ImgCapa ?>">
                             <div class="details">
                                 <h2><?= $value->Titulo ?></h2>
                                 <p><?= $value->SubTitulo ?></p>
