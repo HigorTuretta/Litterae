@@ -23,11 +23,11 @@ class modelSlides
     }
 
     //busca slides por Status
-    function buscaSlidesHabilitados($conDb)
+    function buscaSlidesHabilitadosRecentes($conDb)
     {
 
         $modelRsc = $conDb->db_select(
-            "SELECT * FROM slides WHERE StatusSlide = 'H' ORDER BY codSlide"
+            "SELECT * FROM slides WHERE StatusSlide = 'H' ORDER BY codSlide DESC"
         );
 
         if ($conDb->db_num_linhas($modelRsc) == 0) {

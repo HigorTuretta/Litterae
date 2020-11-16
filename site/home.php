@@ -5,7 +5,7 @@ require_once "modelSite.php";
 $model = new modelPortifolio();
 $modelSlide = new modelSlides();
 $dados = $model->buscaRecentes($conDb);
-$slider = $modelSlide->buscaSlidesHabilitados($conDb);
+$slider = $modelSlide->buscaSlidesHabilitadosRecentes($conDb);
 
 ?>
 <!-- SLIDE BEGIN -->
