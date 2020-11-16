@@ -117,9 +117,9 @@ if ($acao == "Insert") {
         $result = $model->insert($conDb, $data);
 
         if ($result) {
-            $_SESSION["msgSucesso"] = "Categoria incluída com sucesso !";
+            $_SESSION["msgSucesso"] = "Postagem incluída com sucesso !";
         } else {
-            $_SESSION["msgError"] = "Não foi possível incluir a categoria no banco de dados !";
+            $_SESSION["msgError"] = "Não foi possível incluir a postagem no banco de dados !";
         }
     }
 } else if ($acao == "Update") {
