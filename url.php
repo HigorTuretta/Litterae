@@ -6,7 +6,7 @@
      * home
      */
 
-    $atual = (isset($_GET['pag']) ? $_GET['pag'] : 'start' );
+    $atual = (isset($_GET['pag']) ? $_GET['pag'] : 'home' );
     $pasta = 'site';
     
     /*
