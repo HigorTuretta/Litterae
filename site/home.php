@@ -187,7 +187,7 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
                         return;
                     }
                     repeater();
-                }, 5000);
+                }, 8000);
             }
             repeater();
         }
