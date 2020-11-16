@@ -27,17 +27,19 @@ $descricao = Formulario::set_value("Descricao");
     </div>
 
 
+    <div class="container"> 
+        <div class="read-more-images">
+            <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img1", "") ?>" alt="Imagem 01">
 
-    <div class="read-more-images">
-        <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img1", "") ?>" alt="Imagem 01">
+            <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img2", "") ?>" alt="Imagem 02">
+        </div>
+        <div class="read-more-images">
+            <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img3", "") ?>" alt="Imagem 03">
 
-        <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img2", "") ?>" alt="Imagem 02">
+            <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img4", "") ?>" alt="Imagem 04">
+        </div>
     </div>
-    <div class="read-more-images">
-        <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img3", "") ?>" alt="Imagem 03">
-
-        <img src="<?= SITE_URL . "assets/images/blog/" . Formulario::set_value("Img4", "") ?>" alt="Imagem 04">
-    </div>
+    <hr class="Linha mt-5">
     <div class="mt-5 btn-portifolio">
         <a href="<?= SITE_URL ?>portifolio">
             <div class="personalized-button-back">

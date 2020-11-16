@@ -11,12 +11,12 @@
                             <a href="https://www.facebook.com/litterae.arte" target="blank"><i class="fab fa-facebook-square"></i></a>
                         </div>
                         <div class="col copyright">
-                            <p>Litterae - Todos os Direitos Reservados</p>
+                            <p>Litterae - Todos os Direitos Reservados</p>                            
                         </div>
                         <div class="col">
                             <span>Contatos:</span><br>
-                            <span><i class="fas fa-envelope"></i> contatolitterae.arte@gmail.com</span><br>
-                            <span><a style="color: white; text-decoration: none;" href="https://api.whatsapp.com/send?phone=5532999385459"><i class="fab fa-whatsapp"></i> (32) 99938 5459</a></span>
+                            <span><a class="text-light" href="mailto:contatolitterae.arte@gmail.com"><i class="fas fa-envelope"></i> contatolitterae.arte@gmail.com</a></span><br>
+                            <span><a class="text-light" href="https://api.whatsapp.com/send?phone=5532999385459"><i class="fab fa-whatsapp"></i> (32) 99938 5459</a></span>
                         </div>
                     </div>
                 </div>
