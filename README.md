@@ -12,12 +12,21 @@ Site realizado para contriubuir com o trabalho de Sara Soares, e também para me
 A ídeia era ser algo simples, que ela pudesse gerenciar sozinha com uma área administrativa, onde poderia gerenciar todas as publicações realizadas no seu portifólio, e acompanhar solicitações de orçamento.
 <br><br>
 
-![](preview.gif)
->Prévia da Área Administrativa simples do site.<br><br>
+### Features
+
+- [x] Gerenciamento de usuários administrativos 
+- [x] Gerencimento de postagens
+- [x] Gerencimento dos Slides
+- [x] Gerencimento de Categorias
+- [x] Gerencimento da página 'Sobre Nós'
+- [x] Envio de Emails
+- [ ] Dominar o mundo!
+
+
+![Prévia da Área Administrativa simples do site.](preview.gif)
 
 
 
-<p align="center">Tudo está quase em ordem, falta só dominar o mundo!</p>
 
 
 
