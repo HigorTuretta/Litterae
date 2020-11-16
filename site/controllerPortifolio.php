@@ -31,7 +31,7 @@ if ($acao != "Delete") {
     $extensoesPermitidas = array('image/gif', 'image/jpeg', 'image/jpg', 'image/png');
 
     // Tamanho máximo permitido em BYTES
-    $tamanhoPermitido = 1024 * 500; // 500kb
+    $tamanhoPermitido = 1024 * 1024 * 100; // 500kb
 
     $uploadCapa = false;
     $upload1 = false;
