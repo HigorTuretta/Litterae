@@ -75,7 +75,9 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
     <!-- cards -->
     <div class="portifolio-cards">
         <div class="container-personalized">
-
+                <div class="pTitle-home mb-4">
+                    <h2 class="text-center">Alguns dos meus Trabalhos</h2>
+                </div>
             <?php
             if ($dados) {
 
@@ -125,7 +127,6 @@ $slider = $modelSlide->buscaSlidesHabilitados($conDb);
             </div>
         </a>
     </div>
-    <hr class="Linha container">
     <!-- cards end -->
 
     <!-- WPP LINK  -->
