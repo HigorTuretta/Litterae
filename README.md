@@ -22,10 +22,20 @@ A ídeia era ser algo simples, que ela pudesse gerenciar sozinha com uma área a
 - [x] Envio de Emails
 - [ ] Dominar o mundo!
 
-
+<br><br>
 ![](preview.gif)
 >Prévia da Área Administrativa simples do site.<br><br>
 
+<br>
 
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [JavaScript](https://www.javascript.com/)
+- [PHP](https://www.php.net/)
+- [Bootstrap](https://getbootstrap.com/)
+- CSS
+- [HTML](https://html.com/)
 
 
