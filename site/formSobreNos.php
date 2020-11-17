@@ -16,6 +16,16 @@ $model = new modelSobreNos();
 $dados = $model->buscaCodSobre($conDb, $id);
 
 
+if (sizeof($dados) >= 1) {
+
+    $_SESSION["msgError"] = "Limite de registros atingido!";
+?>
+    <script language="JavaScript">
+        window.location = "<?= SITE_URL ?>listaSobreNos";
+    </script>
+<?php
+}
+
 $descricao = Formulario::set_value("Descricao");
 
 ?>

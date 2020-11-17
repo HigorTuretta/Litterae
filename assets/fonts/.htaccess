@@ -1,8 +1,0 @@
-php_value display_errors Off
-php_value mbstring.http_input auto
-php_value date.timezone America/Sao_Paulo
-<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
-  <IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-  </IfModule>
-</FilesMatch>

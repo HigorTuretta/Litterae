@@ -2,12 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@font-face {
-    font-family: 'beyond_the_mountains';
-    src: url('../fonts/beyond_the_mountains.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 * {
     margin: 0px;
@@ -326,7 +321,7 @@ nav {
 /* SOBRE BEGIN */
 
 .text-sobre {
-    font-family: "beyond_the_mountains";
+    font-family: 'Pacifico', cursive;
     font-size: 30px;
 }
 
@@ -349,7 +344,7 @@ nav {
 /* CARDS BEGIN */
 
 .pTitle-home{
-    font-family: 'beyond_the_mountains';
+    font-family: 'Pacifico', cursive;
 }
 .container-personalized {
     margin: 30px;
@@ -553,7 +548,7 @@ form input, select, textarea {
 }
 
 #contato h2 {
-    font-family: 'beyond_the_mountains';
+    font-family: 'Pacifico', cursive;
     text-align: center;
     margin-bottom: 20px;
     margin-top: 40px;
@@ -661,7 +656,7 @@ form input, select, textarea {
 /* PORTIFOLIO PAGE BEGIN */
 
 .pTitle h2 {
-    font-family: 'beyond_the_mountains';
+    font-family: 'Pacifico', cursive;
     font-size: 45px;
 }
 
@@ -734,7 +729,7 @@ form input, select, textarea {
 }
 
 .sobreNos-title {
-    font-family: 'beyond_the_mountains';
+    font-family: 'Pacifico', cursive;
     text-align: center;
     margin-bottom: 50px;
 }

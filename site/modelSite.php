@@ -275,6 +275,19 @@ class modelPortifolio
 class modelSobreNos
 {
 
+    //Busca dados para alimentar a página
+    function buscaSobreNos($conDb) {
+        
+        $modelRsc = $conDb->db_select( "SELECT * FROM sobrenos LIMIT 1 " );
+        
+        if ( $conDb->db_num_linhas($modelRsc) == 0  ) {
+            return array();
+        } else {
+            return $conDb->db_busca_dados($modelRsc);
+        }
+        
+    }
+
     // busca pelo codigo 
     function buscaCodSobre($conDb, $codSobre)
     {
