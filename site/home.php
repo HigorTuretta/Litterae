@@ -101,10 +101,8 @@ $slider = $modelSlide->buscaSlidesHabilitadosRecentes($conDb);
                                 </div>
                             </div>
                         </div>
-
-
                     <?php
-
+    
                 }
             } else {
 

@@ -13,10 +13,10 @@ require_once $pasta . '/modelSite.php';
 $model = new modelSobreNos();
 
 
+$confereQuantidade = $model->lista($conDb);
 $dados = $model->buscaCodSobre($conDb, $id);
 
-
-if (sizeof($dados) >= 1) {
+if ($acao == 'novo' and sizeof($confereQuantidade) >= 1) {
 
     $_SESSION["msgError"] = "Limite de registros atingido!";
 ?>
@@ -25,6 +25,7 @@ if (sizeof($dados) >= 1) {
     </script>
 <?php
 }
+
 
 $descricao = Formulario::set_value("Descricao");
 
