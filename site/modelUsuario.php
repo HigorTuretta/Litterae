@@ -23,9 +23,9 @@ class modelUsuario
                 array(
                     "admin",
                     "Administrador do Sistema",
-                    password_hash("sarinha", PASSWORD_DEFAULT),
+                    password_hash("adminLitterae", PASSWORD_DEFAULT),
                     1,
-                    "admin@goodplate.com.br"
+                    "admin@litterae.com"
                 )
             );
 
