@@ -13,7 +13,8 @@ require_once 'assets/util/phpmailer/vendor/autoload.php';
 $TipoProjeto = "";
 
 if ($_POST['TipoProjeto'] == 1 ? $TipoProjeto =  "Parede Personalizada" : ($_POST['TipoProjeto'] == 2 ? $TipoProjeto = "Quadro Personalizado" : ($_POST['TipoProjeto'] == 3 ? $TipoProjeto = "Lettering para publicidade" : $TipoProjeto = "Lettering Geral")));
-$mensagem = "Orçamento para " . $TipoProjeto . "<br><br> <p>" . $_POST['Descricao'] . "</p><br>Realizado por: " . $_POST['Nome'] . "<br>Email: <a href= mailto:".$_POST['Email'].">" . $_POST['Email']. "</a>";
+
+$mensagem = "Orçamento para " . $TipoProjeto . "<br><br> <p> Altura: " . $_POST['Altura'] . "<br>Largura: " . $_POST['Largura'] . "<br><br>Descrição:<br>" . $_POST['Descricao'] . "</p><br>Realizado por: " . $_POST['Nome'] . "<br>Email: <a href= mailto:".$_POST['Email'].">" . $_POST['Email']. "</a>";
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer();
 
@@ -32,6 +33,15 @@ $mail->addAddress("contatolitterae.arte@gmail.com", "Litterae - Orçamento");   
 $mail->isHTML(true);                                   // formato do texto de saída
 $mail->Subject     = "Orçamento Solicitado";              // assunto (título do e-mail)
 $mail->Body        = $mensagem;          // Corpo do e-mail em HTML (destinado ao texto geral)
+for($ct=0;$ct<count($_FILES['arquivo']['tmp_name']);$ct++)
+{
+    $uploadfile = tempnam(sys_get_temp_dir(), sha1($_FILES['arquivo']['name'][$ct]));
+    $filename =$_FILES['arquivo']['name'][$ct];
+    if (move_uploaded_file($_FILES['arquivo']['tmp_name'][$ct], $uploadfile)) {
+        $mail->addAttachment($uploadfile, $filename);
+    }
+
+}
 // $mail->AltBody     = $cTextoCorpo;                  // corpo do texto em txt
 // $mail->addAttachment($arquivo['tmp_name'], $arquivo['name']);
 

@@ -130,20 +130,27 @@ $dados = $model->buscaUsuarioID($conDb, $id);
                     </div>
 
                 </div>
+                <?php
+                if ($acao != 'novo') {
+                } else {
+                ?>
+                    <div class="control-group col-12 col-sm-6">
 
-                <div class="control-group col-12 col-sm-6">
+                        <div class="control-label">
+                            <label for="Senha">Senha</label>
+                        </div>
 
-                    <div class="control-label">
-                        <label for="Senha">Senha</label>
+                        <div class="controls">
+
+                            <input type="password" required class="form-control" id="Senha" name="Senha" placeholder="Informe Senha" maxlength="100" />
+
+                        </div>
+
                     </div>
 
-                    <div class="controls">
-
-                        <input type="password" class="form-control" id="Senha" name="Senha" placeholder="Informe Senha" maxlength="100" />
-
-                    </div>
-
-                </div>
+                <?php
+                }
+                ?>
 
             </div>
 

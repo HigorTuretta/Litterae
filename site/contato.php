@@ -1,5 +1,5 @@
 <?php
-    require_once 'lib/Formulario.php';
+require_once 'lib/Formulario.php';
 ?>
 
 <section class="Padrao">
@@ -40,15 +40,28 @@
                         <option value="4">Lettering Geral</option>
                     </select>
                 </div>
-                <!-- <div class="form group col-md-3">
-                        <label for="arquivo">Tem alguma imagem de ideia base?</label>
-                        <input type="file" name="arquivo" id="arquivo" accept=".png , .jpeg, .jpg">
-                    </div> -->
+                <div class="metricas">
+                    <div class="form-group mr-4">
+                        <label for="Altura">Altura:</label>
+                        <input  class="form-control" type="number" step="0.01" name="Altura" id="Altura">
+                    </div>                
+
+                </div>
+                <div class="metricas">
+                    <div class="form-group">
+                        <label for="Largura">Largura:</label>
+                        <input  class="form-control" type="number" step="0.01" name="Largura" id="Largura">
+                    </div>
+                </div>
+                <div class="form group col-md-3 ml-4">
+                    <label for="arquivo">Tem alguma imagem de ideia base?</label>
+                    <input type="file" multiple name="arquivo[]" id="arquivo[]" accept=".png , .jpeg , .jpg , .mp4">
+                </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-12">
                     <label for="Descricao">Descreva seu projeto:</label>
-                    <textarea required name="Descricao" id="Descricao" cols="30" rows="7" class="form-control" placeholder="Tente Descrever ao máximo o que será necessário, e se possivel, as medidas do mesmo"></textarea>
+                    <textarea required name="Descricao" id="Descricao" cols="30" rows="7" class="form-control" placeholder="Tente Descrever ao máximo qual é a sua idéia, frases ou textos que prefere,caso seja parede informações sobre o acabamento da mesma, envie de preferência algumas fotos,  e se possivel, as medidas do mesmo. Isso torna o procedimento mais rápido para melhor te atender!"></textarea>
                 </div>
             </div>
             <div class="form-row">
@@ -73,3 +86,22 @@
         <!-- WPP LINK -->
     </div>
 </section>
+
+
+<!-- SCRIPT DE CONTROLE DE CAMPOS DO FORMULÁRIO -->
+<script>
+    $(document).ready(function() {
+        $('.metricas').hide();
+        $('#TipoProjeto').change(function() {
+            if ($('#TipoProjeto').val() == '1') {
+                $('.metricas').show();
+                $('#Altura').attr('required' , true);
+                $('#Largura').attr('required', true);
+            } else {
+                $('.metricas').hide();
+                $('#Altura').removeAttr('required');
+                $('#Largura').removeAttr('required');
+            }
+        });
+    });
+</script>
